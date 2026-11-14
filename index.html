@@ -75,6 +75,7 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 /* Grille des vidéos */
 .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card{cursor:pointer}.card:hover{border-color:var(--gold)}
 .card.like{border-color:var(--ok)}
 .card.dim{opacity:.45}
 .thumb{position:relative;aspect-ratio:3/4;display:block;text-decoration:none;overflow:hidden;background:#221d2c}
@@ -221,7 +222,7 @@ function render(){
     const cls=s==="J'aime"?'like':(s==='Faite'||s==='Pas pour moi')&&PAGE==='radar'?'dim':'';
     const vid=(h.lien||'').match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);
     const img=h.img?`<img src="${esc(h.img)}" alt="" loading="lazy" onerror="this.remove()">`:'';
-    return `<article class="card ${cls}">
+    return `<article class="card ${cls}" data-link="${esc(h.lien||'')}">
       <a class="thumb" href="${esc(h.lien||'#')}" target="_blank" rel="noopener" aria-label="Voir la vidéo ${esc(h.titre)}" style="background:linear-gradient(160deg,hsl(${g} 45% 26%),hsl(${(g+40)%360} 40% 11%))">
         <div class="ph">${esc(h.titre)}</div>${img}
         <span class="n">${String(i+1).padStart(2,'0')}</span><span class="views">${fmtV(h.vues)}</span><span class="play"></span>${h.duree?`<span class="dur">${fmtD(h.duree).replace(" min ",":")}</span>`:""}<span class="tag">${h.niche==="Fruits"?"🍋 FRUITS":"HORS NICHE"}</span>
@@ -254,6 +255,8 @@ document.addEventListener('click',async e=>{
   const c=e.target.closest('.chip');if(c){NICHE=c.dataset.n;render();return}
   const b=e.target.closest('.st button');
   if(b){MINE[b.parentElement.dataset.id]=b.dataset.s;try{localStorage.setItem(KEY,JSON.stringify(MINE))}catch(_){}render();toast(`« ${b.dataset.s} » enregistré`);return}
+  const card=e.target.closest('.card');
+  if(card&&card.dataset.link&&!e.target.closest('a,button')){window.open(card.dataset.link,'_blank','noopener');return}
   if(e.target.id==='copyLikes'){
     const L=HITS.filter(h=>statut(h)==="J'aime").sort((a,b)=>(b.vues||0)-(a.vues||0));
     if(!L.length){toast("Ta sélection est vide");return}
