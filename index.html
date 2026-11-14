@@ -145,6 +145,19 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
 .steps label{display:flex;gap:6px;align-items:center;font-size:13.5px;background:var(--panel2);border-radius:9px;padding:7px 9px;cursor:pointer}
 .steps input{accent-color:#7fd99a}
 .prog{height:6px;border-radius:3px;background:var(--line);overflow:hidden}.prog i{display:block;height:100%;background:var(--ok)}
+.ok{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#5fd68a;color:#0b2414;font-size:16px;margin-right:10px;vertical-align:middle}
+.opts3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.opts3 button{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.opts3 button b{font:700 17px var(--f-h)}.opts3 button span{color:var(--muted);font-size:13.5px}
+.opts3 button[aria-pressed=true]{border-color:var(--gold);background:#3a3524;box-shadow:0 0 0 1px var(--gold)}
+.drow{display:flex;gap:12px;align-items:center}.drow input{width:120px;background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px;font:600 18px var(--f-h)}
+.chips2{display:flex;flex-wrap:wrap;gap:8px}.chips2 button{background:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;color:var(--fg)}
+.chips2 button[aria-pressed=true]{background:#3a3524;border-color:var(--gold);color:var(--gold)}
+#sCons,#sIdeeMore textarea,#sIdeeMore select{width:100%;background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:12px;font:14px/1.5 var(--f-b)}
+.pipe{display:flex;flex-direction:column;gap:8px}.pipe div{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.pipe b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);flex:none}
+.pipe span{display:flex;flex-direction:column;font-size:13px;color:var(--muted)}.pipe strong{color:var(--fg);font-size:15px}
+.go{background:var(--gold2);color:#191612;border:0;border-radius:12px;padding:14px 22px;font:700 15px var(--f-b)}
 /* Téléphone */
 @media (max-width:860px){
   .burger{display:block}
@@ -178,10 +191,11 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
   <h3>TON ESPACE</h3>
   <nav class="nav" id="nav">
     <button data-p="radar" aria-current="true"><small>01</small>Le radar<i>↗</i></button>
-    <button data-p="like"><small>02</small>Ma sélection <em id="nLike">0</em><i>↗</i></button>
-    <button data-p="plan"><small>03</small>Planning<i>↗</i></button>
-    <button data-p="faite"><small>04</small>Déjà faites <em id="nDone">0</em><i>↗</i></button>
-    <button data-p="compte"><small>05</small>Mon compte<i>↗</i></button>
+    <button data-p="studio"><small>02</small>Studio IA<i>↗</i></button>
+    <button data-p="like"><small>03</small>Ma sélection <em id="nLike">0</em><i>↗</i></button>
+    <button data-p="plan"><small>04</small>Planning<i>↗</i></button>
+    <button data-p="faite"><small>05</small>Déjà faites <em id="nDone">0</em><i>↗</i></button>
+    <button data-p="compte"><small>06</small>Mon compte<i>↗</i></button>
   </nav>
   <div class="aside-foot">Les vidéos sont ajoutées par Claude à chaque veille.<br>Tes choix restent dans ce navigateur.</div>
 </aside>
@@ -211,6 +225,47 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
   <div class="head2"><h2 id="h2">Le radar</h2><span class="sp"></span><button class="link" id="copyLikes">Copier ma sélection pour Claude ↓</button></div>
   <div class="count" id="count"></div>
   <div class="grid" id="list"></div>
+  <section id="studioView" hidden>
+    <div class="ccard">
+      <h3><span class="ok">✓</span> Ton idée</h3><p class="cnote" style="margin:-10px 0 14px">D'où part ta vidéo ?</p>
+      <div class="opts3" id="sIdee">
+        <button data-v="mon"><b>💡 Mon idée</b><span>Je décris mon histoire, ou Claude m'en propose une.</span></button>
+        <button data-v="aime"><b>★ Une vidéo que j'aime</b><span>Claude reprend sa trame, avec notre sauce.</span></button>
+        <button data-v="trouve"><b>🔎 Trouve pour moi</b><span>Claude prend la plus vue de ta banque, pas encore faite.</span></button>
+      </div>
+      <div id="sIdeeMore" style="margin-top:14px"></div>
+    </div>
+    <div class="ccard">
+      <h3><span class="ok">✓</span> Ton style</h3>
+      <div class="opts3" id="sStyle">
+        <button data-v="DA DRAMAVERSE (comme « Personne la regarde »)"><b>🍋 Ma DA DRAMAVERSE</b><span>Comme « Personne la regarde » : vrai fruit en tête, peau couleur du fruit, style Pixar.</span></button>
+        <button data-v="Affiche de film (couverture style cinéma)"><b>🎬 Ambiance cinéma</b><span>Même DA, plans plus dramatiques, lumières de film.</span></button>
+        <button data-v="Comédie colorée"><b>😂 Comédie colorée</b><span>Même DA, couleurs vives, comédie physique.</span></button>
+      </div>
+    </div>
+    <div class="ccard">
+      <h3><span class="ok">✓</span> La durée</h3>
+      <div class="drow"><input type="number" id="sDuree" min="62" step="1" value="62"><span class="cnote">secondes (minimum 62)</span></div>
+    </div>
+    <div class="ccard">
+      <h3>Options</h3>
+      <p class="cnote" style="margin:-10px 0 12px">Amélioration du script</p>
+      <div class="chips2" id="sAmel"></div>
+      <p class="cnote" style="margin:18px 0 8px">Mes consignes (enregistrées dans ce navigateur)</p>
+      <textarea id="sCons" rows="9"></textarea>
+    </div>
+    <div class="ccard">
+      <h3>Les 5 étapes</h3>
+      <div class="pipe">
+        <div><b>1</b><span><strong>Script</strong>Claude écrit l'histoire</span></div>
+        <div><b>2</b><span><strong>Personnages</strong>Claude fait la planche, tu génères dans ChatGPT</span></div>
+        <div><b>3</b><span><strong>Scènes</strong>Prompts ChatGPT, tu génères les images</span></div>
+        <div><b>4</b><span><strong>Clips</strong>Prompts Grok, Claude ou toi</span></div>
+        <div><b>5</b><span><strong>Montage</strong>Claude monte et vérifie tout</span></div>
+      </div>
+      <div class="bar" style="border:0;margin:18px 0 0;padding:0"><button class="go" id="sGo">Copier et lancer avec Claude ↗</button><span class="cnote" id="sHint" hidden>Le brief est copié : colle-le dans une nouvelle conversation Claude.</span></div>
+    </div>
+  </section>
   <section id="planView" hidden>
     <div class="week"><button id="wPrev">←</button><b id="wLabel"></b><button id="wNext">→</button><span style="flex:1"></span><button class="link" id="copyPlan">Copier le planning pour Claude ↓</button></div>
     <div class="days" id="days"></div>
@@ -228,14 +283,15 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
 const ST=["À regarder","J'aime","Pas pour moi","Faite"];
 const PAGES={
   radar:{kick:'01 / Le radar',h1:'Les hits qui cartonnent,<br><span>bientôt en fruits.</span>',lead:"Les vidéos qui ont percé sur TikTok, triées par vues. Coche celles que tu aimes : ta prochaine histoire sort de ta sélection.",h2:'Le radar',f:h=>statut(h)==='À regarder'||statut(h)==="J'aime"},
-  like:{kick:'02 / Ma sélection',h1:'Tes coups de cœur,<br><span>prêts à tourner.</span>',lead:"Les vidéos que tu as cochées « J'aime ». Copie ta sélection et colle-la à Claude : il commence par la plus vue.",h2:'Ma sélection',f:h=>statut(h)==="J'aime"},
-  faite:{kick:'04 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
-  plan:{kick:'03 / Planning',h1:'Une semaine,<br><span>sept vidéos.</span>',lead:'Pour chaque jour : la vidéo source, ton titre et où tu en es. Tout est enregistré dans ce navigateur.',h2:'',f:()=>false},
-  compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
+  like:{kick:'03 / Ma sélection',h1:'Tes coups de cœur,<br><span>prêts à tourner.</span>',lead:"Les vidéos que tu as cochées « J'aime ». Copie ta sélection et colle-la à Claude : il commence par la plus vue.",h2:'Ma sélection',f:h=>statut(h)==="J'aime"},
+  faite:{kick:'05 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
+  studio:{kick:'02 / Studio IA',h1:'Réponds à 3 questions.<br><span>Claude fait le reste.</span>',lead:'Choisis ton idée, ta durée et tes options, puis envoie le tout à Claude : il écrit l\'histoire et les prompts, tu génères les images, il gère Grok et le montage.',h2:'',f:()=>false},
+  plan:{kick:'04 / Planning',h1:'Une semaine,<br><span>sept vidéos.</span>',lead:'Pour chaque jour : la vidéo source, ton titre et où tu en es. Tout est enregistré dans ce navigateur.',h2:'',f:()=>false},
+  compte:{kick:'06 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
 const KEY='dramaverse-statuts-v1';
-let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,like:1,plan:1,faite:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
+let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,studio:1,like:1,plan:1,faite:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
 let MINE={};try{MINE=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 const THUMBS={};
 const $=s=>document.querySelector(s);
@@ -252,6 +308,54 @@ const hue=id=>[...id].reduce((a,c)=>(a*31+c.charCodeAt(0))%360,7);
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2000)}
 
 let COMPTE=null;
+const SKEY='dramaverse-studio-v1';
+const AMEL=['Accroche plus forte','Rythme plus nerveux','Dialogue plus naturel','Chute plus surprenante','Enjeu plus clair','Plus d\'émotion','Plus de comédie physique','Meilleure boucle'];
+const CONS_DEF=`Langue : dialogues 100 % en français familier, cash, comme la téléréalité. Répliques courtes, rapport de force, clash du tac au tac.
+Personnages : uniquement des fruits avec un visage (tête = vrai fruit entier, peau visible couleur du fruit). AUCUN humain, aucune main humaine. Un enfant est du même fruit que son parent. Prénoms faciles à prononcer par une IA.
+Histoire : choquante mais réaliste. La 1re seconde = un fait qui fait tomber la mâchoire. Aucun temps mort, aucun silence. Fin surprenante. Pas de texte à l'écran en fin de vidéo.
+Continuité : un objet n'apparaît jamais sans qu'on le voie le sortir. La voix d'un personnage ne change pas.
+Format : 9:16 plein écran. Clips Grok jamais de 15 s. Nappe musicale discrète sous les voix.`;
+let ST_={idee:'trouve',src:'',texte:'',style:'DA DRAMAVERSE (comme « Personne la regarde »)',duree:62,amel:['Accroche plus forte','Rythme plus nerveux','Chute plus surprenante','Dialogue plus naturel'],cons:CONS_DEF};
+try{Object.assign(ST_,JSON.parse(localStorage.getItem(SKEY))||{})}catch(e){}
+const saveS=()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST_))}catch(e){}};
+function renderStudio(){
+  document.querySelectorAll('#sIdee button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===ST_.idee));
+  document.querySelectorAll('#sStyle button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===ST_.style));
+  const opts=HITS.slice().sort((a,b)=>(statut(b)==="J'aime")-(statut(a)==="J'aime")||(b.vues||0)-(a.vues||0));
+  $('#sIdeeMore').innerHTML=ST_.idee==='mon'?`<textarea id="sTexte" rows="3" placeholder="Décris ton idée (ou laisse vide : Claude te propose 10 intros)">${esc(ST_.texte)}</textarea>`
+    :ST_.idee==='aime'?`<select id="sSrc"><option value="">— Choisis la vidéo —</option>${opts.filter(h=>statut(h)!=='Faite').map(h=>`<option value="${esc(h.id)}"${h.id===ST_.src?' selected':''}>${statut(h)==="J'aime"?'❤ ':''}${esc(h.titre)} (${fmtV(h.vues)})</option>`).join('')}</select>`
+    :`<p class="cnote">Claude prendra d'abord tes ❤ J'aime, sinon la vidéo la plus vue de la banque qui n'est pas encore faite.</p>`;
+  $('#sDuree').value=ST_.duree;
+  $('#sAmel').innerHTML=AMEL.map(a=>`<button data-a="${esc(a)}" aria-pressed="${ST_.amel.includes(a)}">${ST_.amel.includes(a)?'✓ ':''}${esc(a)}</button>`).join('');
+  if(document.activeElement!==$('#sCons'))$('#sCons').value=ST_.cons;
+}
+function brief(){
+  const likes=HITS.filter(h=>statut(h)==="J'aime").sort((a,b)=>b.vues-a.vues);
+  let idee;
+  if(ST_.idee==='mon')idee=ST_.texte.trim()?`Mon idée : ${ST_.texte.trim()}`:'Mon idée : propose-moi 10 intros, chacune avec son titre.';
+  else if(ST_.idee==='aime'){const h=HITS.find(x=>x.id===ST_.src);idee=h?`Vidéo source : « ${h.titre} » (${fmtV(h.vues)} vues) ${h.lien} [${h.id}]. Suis la trame avec notre sauce, pas de copier-coller.`:'Vidéo source : à choisir.'}
+  else idee=`Trouve pour moi : prends dans ma banque de hits (https://chrispipeau.github.io/dramaverse/) ${likes.length?'mes J\'aime : '+likes.map(h=>`« ${h.titre} » ${h.lien} [${h.id}]`).join(' ; '):'la vidéo la plus vue qui n\'est pas encore faite'}, puis envoie-moi le lien pour que je valide.`;
+  return `STUDIO DRAMAVERSE — nouvelle vidéo
+${idee}
+Style : ${ST_.style}.
+Durée : ${Math.max(62,+ST_.duree||62)} secondes minimum.
+Amélioration du script : ${ST_.amel.join(', ')||'aucune'}.
+Étapes : 1) script (intros d'abord, puis histoire après validation), 2) planche des personnages, 3) prompts ChatGPT des scènes en un seul bloc (je génère les images), 4) prompts Grok un bloc par clip (demande-moi avant de lancer Grok toi-même), 5) montage vérifié (son, lèvres, temps morts, 9:16).
+Mes consignes :
+${ST_.cons.trim()}`;
+}
+document.addEventListener('click',e=>{
+  const i=e.target.closest('#sIdee button');if(i){ST_.idee=i.dataset.v;saveS();renderStudio();return}
+  const st=e.target.closest('#sStyle button');if(st){ST_.style=st.dataset.v;saveS();renderStudio();return}
+  const a=e.target.closest('#sAmel button');if(a){const v=a.dataset.a;ST_.amel=ST_.amel.includes(v)?ST_.amel.filter(x=>x!==v):[...ST_.amel,v];saveS();renderStudio();return}
+  if(e.target.id==='sGo'){const t=brief();navigator.clipboard.writeText(t).then(()=>{toast('Brief copié : colle-le dans Claude');$('#sHint').hidden=false;},()=>prompt('Copie ce texte :',t))}
+});
+document.addEventListener('input',e=>{
+  if(e.target.id==='sCons'){ST_.cons=e.target.value;saveS()}
+  if(e.target.id==='sTexte'){ST_.texte=e.target.value;saveS()}
+  if(e.target.id==='sDuree'){ST_.duree=Math.max(62,+e.target.value||62);saveS()}
+});
+document.addEventListener('change',e=>{if(e.target.id==='sSrc'){ST_.src=e.target.value;saveS()}});
 const PKEY='dramaverse-planning-v1';let PLAN={};try{PLAN=JSON.parse(localStorage.getItem(PKEY))||{}}catch(e){}
 let WOFF=0;const JOURS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];const STEPS=['Images','Clips','Montage','Publiée'];
 const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
@@ -295,7 +399,8 @@ function renderCompte(){
 }
 function render(){
   const H=HITS,P=PAGES[PAGE];
-  const isC=PAGE==='compte',isP=PAGE==='plan';show('#compteView',isC);show('#planView',isP);show('.search,.bar,.tiles,.head2,#count,#list',!isC&&!isP);
+  const isC=PAGE==='compte',isP=PAGE==='plan',isS=PAGE==='studio';show('#compteView',isC);show('#planView',isP);show('#studioView',isS);show('.search,.bar:not(#studioView .bar),.tiles,.head2,#count,#list',!isC&&!isP&&!isS);
+  if(isS){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderStudio();return}
   if(isP){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderPlan();return}
   if(isC){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderCompte();return}
   $('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;$('#h2').textContent=P.h2;
