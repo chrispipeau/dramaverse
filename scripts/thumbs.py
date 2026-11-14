@@ -37,6 +37,12 @@ def refresh_stats(h):
     v = int(st.get("playCount") or 0)
     if v <= 0: return False
     h["vues"] = round(v / 1e6, 2)
+    import datetime
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).strftime("%Y-%m-%d")
+    hist = h.get("hist") or []
+    if hist and hist[-1][0] == today: hist[-1] = [today, v]
+    else: hist.append([today, v])
+    h["hist"] = hist[-30:]
     for k, src in (("likes", "diggCount"), ("comms", "commentCount"), ("partages", "shareCount")):
         if st.get(src) is not None: h[k] = int(st[src])
     return True
