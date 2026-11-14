@@ -62,7 +62,7 @@ h1 span{color:var(--gold);font-weight:600}
 .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0;padding-bottom:22px;border-bottom:1px solid var(--line)}
 .bar .sp{flex:1}
 select{background:var(--gold2);color:#191612;border:0;border-radius:10px;padding:12px 14px;font:500 15px var(--f-b);min-width:150px}
-.chips{display:flex;gap:18px;flex-wrap:wrap}
+.chips{display:flex;gap:10px 18px;flex-wrap:wrap;flex:1 1 400px}
 .chip{background:none;border:0;color:var(--muted);font-size:14px;padding:4px 0}
 .chip::after{content:" ↗";font-size:11px}
 .chip[aria-pressed=true]{color:var(--gold)}
@@ -290,7 +290,7 @@ const PAGES={
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
 const KEY='dramaverse-statuts-v1';
-let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,studio:1,like:1,plan:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
+let NICHE0='Toutes';let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,studio:1,like:1,plan:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
 let MINE={};try{MINE=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 const THUMBS={};
 const $=s=>document.querySelector(s);
@@ -302,6 +302,25 @@ const ageH=h=>{if(!h.date)return null;const[d,m,y]=h.date.split('/').map(Number)
 const vph=h=>{const a=ageH(h);return a?h.vues*1e6/a:null};
 const gain=h=>{const t=h.hist||[];if(t.length<2)return null;const a=t[t.length-2],b=t[t.length-1];const dd=(new Date(b[0])-new Date(a[0]))/864e5||1;return (b[1]-a[1])/dd};
 let HOT=new Set();
+const hu_=h=>(h.humeur||'').toLowerCase();
+const ageJ=h=>{if(!h.date)return 9999;const[d,m,y]=h.date.split('/').map(Number);return (Date.now()-new Date(y,m-1,d))/864e5};
+const THEMES={
+  'Toutes':()=>true,
+  'Fruits IA':h=>h.niche==='Fruits',
+  'Hors niche':h=>h.niche==='Hors niche',
+  'Drame':h=>hu_(h).includes('drame'),
+  'Comédie':h=>hu_(h).includes('comédie')||hu_(h).includes('prank'),
+  'Karma & vengeance':h=>hu_(h).includes('karma')||hu_(h).includes('vengeance'),
+  'Émotion':h=>hu_(h).includes('émotion'),
+  'Débat':h=>hu_(h).includes('débat')||hu_(h).includes('injustice')||hu_(h).includes('ambiguïté'),
+  'Épouvante':h=>hu_(h).includes('épouvante'),
+  'Séries':h=>/épisode|partie|série/i.test((h.titre||'')+' '+(h.note||'')),
+  '10 M+':h=>h.vues>=10,
+  '5 M+':h=>h.vues>=5,
+  'Récentes (3 mois)':h=>ageJ(h)<=92,
+  'Faciles en fruits':h=>(h.fruits||0)>=4,
+  '🔥 Ça décolle':h=>HOT.has(h.id)
+};
 const statut=h=>MINE[h.id]||h.statut||'À regarder';
 const hue=id=>[...id].reduce((a,c)=>(a*31+c.charCodeAt(0))%360,7);
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2000)}
@@ -407,11 +426,11 @@ function render(){
   const n=s=>H.filter(h=>statut(h)===s).length;
   $('#nLike').textContent=n("J'aime");
   $('#tiles').innerHTML=`<div class="tile"><b>${H.length}</b><span>vidéos en stock</span></div><div class="tile"><b>${n("J'aime")}</b><span>dans ta sélection</span></div><div class="tile"><b>${n('À regarder')}</b><span>à regarder</span></div><div class="tile"><b>${n('Faite')}</b><span>déjà faites</span></div>`;
-  $('#niche').innerHTML=['Toutes','Fruits','Hors niche'].map(v=>`<button class="chip" data-n="${v}" aria-pressed="${NICHE===v}">${v}</button>`).join('');
+  $('#niche').innerHTML=Object.keys(THEMES).filter(k=>k==='Toutes'||H.some(THEMES[k])).map(v=>`<button class="chip" data-n="${v}" aria-pressed="${NICHE===v}">${v}</button>`).join('');
   const hs=$('#humeur'),cur=hs.value||'Toutes';
   hs.innerHTML=['Toutes',...[...new Set(H.map(h=>h.humeur).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'))].map(v=>`<option value="${esc(v)}"${v===cur?' selected':''}>${v==='Toutes'?'Toutes les humeurs':esc(v)}</option>`).join('');
   const q=$('#q').value.trim().toLowerCase(),so=$('#sort').value,hu=hs.value;
-  let L=H.filter(h=>P.f(h)&&(NICHE==='Toutes'||h.niche===NICHE)&&(hu==='Toutes'||h.humeur===hu)&&(!q||[h.titre,h.resume,h.compte,h.humeur,h.note].join(' ').toLowerCase().includes(q)));
+  let L=H.filter(h=>P.f(h)&&THEMES[NICHE||'Toutes'](h)&&(hu==='Toutes'||h.humeur===hu)&&(!q||[h.titre,h.resume,h.compte,h.humeur,h.note].join(' ').toLowerCase().includes(q)));
   L.sort(so==='hot'?(a,b)=>(gain(b)??-1)-(gain(a)??-1):so==='vh'?(a,b)=>(vph(b)??-1)-(vph(a)??-1):so==='titre'?(a,b)=>a.titre.localeCompare(b.titre,'fr'):so==='fruits'?(a,b)=>(b.fruits||0)-(a.fruits||0)||(b.vues||0)-(a.vues||0):(a,b)=>(b.vues||0)-(a.vues||0));
   $('#count').textContent=`${L.length} affichée${L.length>1?'s':''} · ${H.length} en stock`;
   $('#list').innerHTML=L.length?L.map((h,i)=>{const s=statut(h),g=hue(h.id);
