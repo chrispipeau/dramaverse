@@ -1,0 +1,21 @@
+name: Couvertures TikTok
+on:
+  push:
+    paths: ["data/hits.json", "scripts/thumbs.py", ".github/workflows/thumbs.yml"]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"
+permissions:
+  contents: write
+concurrency: thumbs
+jobs:
+  thumbs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/thumbs.py
+      - run: |
+          git config user.name "dramaverse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add thumbs data/hits.json
+          git diff --cached --quiet || (git commit -m "Couvertures TikTok" && git push)
