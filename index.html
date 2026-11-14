@@ -77,9 +77,11 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .card.like{border-color:var(--ok)}
 .card.dim{opacity:.45}
-.thumb{position:relative;aspect-ratio:4/5;display:block;text-decoration:none;overflow:hidden;background:#221d2c}
+.thumb{position:relative;aspect-ratio:9/16;display:block;text-decoration:none;overflow:hidden;background:#221d2c}
+.thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .thumb .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 20px 44px;font:800 24px/1.1 var(--f-h);letter-spacing:-.02em}
+.n,.views{pointer-events:none}
 .n{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.55);border-radius:6px;padding:2px 7px;font:700 13px var(--f-h);color:var(--gold2);z-index:2}
 .views{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);border-radius:999px;padding:4px 12px;font:800 16px var(--f-h);color:var(--gold);z-index:2}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.75);display:grid;place-items:center;z-index:2}
@@ -212,12 +214,13 @@ function render(){
   $('#count').textContent=`${L.length} affichée${L.length>1?'s':''} · ${H.length} en stock`;
   $('#list').innerHTML=L.length?L.map((h,i)=>{const s=statut(h),g=hue(h.id);
     const cls=s==="J'aime"?'like':(s==='Faite'||s==='Pas pour moi')&&PAGE==='radar'?'dim':'';
-    const img=THUMBS[h.id]?`<img src="${esc(THUMBS[h.id])}" alt="" loading="lazy" onerror="this.remove()">`:'';
+    const vid=(h.lien||'').match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);
+    const img=vid?`<iframe src="https://www.tiktok.com/player/v1/${vid[1]}?autoplay=0&music_info=0&description=0&rel=0&native_context_menu=0" loading="lazy" allow="fullscreen" title="${esc(h.titre)}"></iframe>`:'';
     return `<article class="card ${cls}">
-      <a class="thumb" href="${esc(h.lien||'#')}" target="_blank" rel="noopener" aria-label="Voir la vidéo ${esc(h.titre)}" style="background:linear-gradient(160deg,hsl(${g} 45% 26%),hsl(${(g+40)%360} 40% 11%))">
+      <${vid?'div':'a'} class="thumb" href="${esc(h.lien||'#')}" target="_blank" rel="noopener" aria-label="Voir la vidéo ${esc(h.titre)}" style="background:linear-gradient(160deg,hsl(${g} 45% 26%),hsl(${(g+40)%360} 40% 11%))">
         <div class="ph">${esc(h.titre)}</div>${img}
-        <span class="n">${String(i+1).padStart(2,'0')}</span><span class="views">${fmtV(h.vues)}</span><span class="play"></span>${h.duree?`<span class="dur">${fmtD(h.duree).replace(" min ",":")}</span>`:""}<span class="tag">${h.niche==="Fruits"?"🍋 FRUITS":"HORS NICHE"}</span>
-      </a>
+        <span class="n">${String(i+1).padStart(2,'0')}</span><span class="views">${fmtV(h.vues)}</span>${vid?'':'<span class="play"></span>'}${!vid&&h.duree?`<span class="dur">${fmtD(h.duree).replace(" min ",":")}</span>`:""}${vid?"":`<span class="tag">${h.niche==="Fruits"?"🍋 FRUITS":"HORS NICHE"}</span>`}
+      </${vid?'div':'a'}>
       <div class="body">
         <div class="who"><span>${esc(h.compte||'Source : article')}</span><span>${esc(h.date||'')}</span></div>
         <div class="t">${esc(h.titre)}</div>
@@ -226,6 +229,7 @@ function render(){
         <div class="pills">${h.humeur?`<span class="pill">${esc(h.humeur)}</span>`:''}<span class="pill ${h.niche==='Fruits'?'f':''}">${esc(h.niche)}</span>${h.fruits?`<span class="pill">En fruits ${'★'.repeat(h.fruits)}${'☆'.repeat(5-h.fruits)}</span>`:''}</div>
         <p>${esc(h.resume)}</p>
         ${h.verif?`<div class="warn">⚠ ${esc(h.verif)}</div>`:''}${h.note?`<div class="warn">${esc(h.note)}</div>`:''}
+        ${h.lien?`<a class="meta" href="${esc(h.lien)}" target="_blank" rel="noopener" style="color:var(--gold)">Ouvrir sur ${h.lien.includes("tiktok.com")?"TikTok":"l'article"} ↗</a>`:""}
         <div class="st" data-id="${esc(h.id)}">${ST.map(x=>`<button data-s="${esc(x)}" aria-pressed="${x===s}">${esc(x)}</button>`).join('')}</div>
       </div></article>`}).join(''):`<div class="empty">Rien ici pour l'instant.</div>`;
 }
@@ -256,7 +260,7 @@ $('#q').addEventListener('input',render);
 $('#sort').addEventListener('change',render);
 $('#humeur').addEventListener('change',render);
 
-fetch('data/hits.json?'+Date.now()).then(r=>r.json()).then(d=>{HITS=d.hits||[];$('#maj').textContent='Mise à jour le '+(d.maj||'');render();loadThumbs()})
+fetch('data/hits.json?'+Date.now()).then(r=>r.json()).then(d=>{HITS=d.hits||[];$('#maj').textContent='Mise à jour le '+(d.maj||'');render()})
   .catch(()=>{$('#list').innerHTML='<div class="empty">Impossible de charger la banque. Recharge la page.</div>'});
 </script>
 </body>
