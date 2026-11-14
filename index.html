@@ -194,8 +194,7 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
     <button data-p="studio"><small>02</small>Studio IA<i>↗</i></button>
     <button data-p="like"><small>03</small>Ma sélection <em id="nLike">0</em><i>↗</i></button>
     <button data-p="plan"><small>04</small>Planning<i>↗</i></button>
-    <button data-p="faite"><small>05</small>Déjà faites <em id="nDone">0</em><i>↗</i></button>
-    <button data-p="compte"><small>06</small>Mon compte<i>↗</i></button>
+    <button data-p="compte"><small>05</small>Mon compte<i>↗</i></button>
   </nav>
   <div class="aside-foot">Les vidéos sont ajoutées par Claude à chaque veille.<br>Tes choix restent dans ce navigateur.</div>
 </aside>
@@ -287,11 +286,11 @@ const PAGES={
   faite:{kick:'05 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
   studio:{kick:'02 / Studio IA',h1:'Réponds à 3 questions.<br><span>Claude fait le reste.</span>',lead:'Choisis ton idée, ta durée et tes options, puis envoie le tout à Claude : il écrit l\'histoire et les prompts, tu génères les images, il gère Grok et le montage.',h2:'',f:()=>false},
   plan:{kick:'04 / Planning',h1:'Une semaine,<br><span>sept vidéos.</span>',lead:'Pour chaque jour : la vidéo source, ton titre et où tu en es. Tout est enregistré dans ce navigateur.',h2:'',f:()=>false},
-  compte:{kick:'06 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
+  compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
 const KEY='dramaverse-statuts-v1';
-let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,studio:1,like:1,plan:1,faite:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
+let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,studio:1,like:1,plan:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
 let MINE={};try{MINE=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 const THUMBS={};
 const $=s=>document.querySelector(s);
@@ -406,7 +405,7 @@ function render(){
   $('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;$('#h2').textContent=P.h2;
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));
   const n=s=>H.filter(h=>statut(h)===s).length;
-  $('#nLike').textContent=n("J'aime");$('#nDone').textContent=n('Faite');
+  $('#nLike').textContent=n("J'aime");
   $('#tiles').innerHTML=`<div class="tile"><b>${H.length}</b><span>vidéos en stock</span></div><div class="tile"><b>${n("J'aime")}</b><span>dans ta sélection</span></div><div class="tile"><b>${n('À regarder')}</b><span>à regarder</span></div><div class="tile"><b>${n('Faite')}</b><span>déjà faites</span></div>`;
   $('#niche').innerHTML=['Toutes','Fruits','Hors niche'].map(v=>`<button class="chip" data-n="${v}" aria-pressed="${NICHE===v}">${v}</button>`).join('');
   const hs=$('#humeur'),cur=hs.value||'Toutes';
