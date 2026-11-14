@@ -27,6 +27,20 @@ def via_tikwm(link):
     data = d.get("data") or {}
     return data.get("origin_cover") or data.get("cover")
 
+def refresh_stats(h):
+    """Relit les chiffres publics de la vidéo sur sa page TikTok."""
+    html = get(h["lien"])
+    m = re.search(r'<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"[^>]*>(.*?)</script>', html, re.S)
+    if not m: return False
+    it = json.loads(m.group(1))["__DEFAULT_SCOPE__"]["webapp.video-detail"]["itemInfo"]["itemStruct"]
+    st = it.get("statsV2") or it.get("stats") or {}
+    v = int(st.get("playCount") or 0)
+    if v <= 0: return False
+    h["vues"] = round(v / 1e6, 2)
+    for k, src in (("likes", "diggCount"), ("comms", "commentCount"), ("partages", "shareCount")):
+        if st.get(src) is not None: h[k] = int(st[src])
+    return True
+
 def main():
     path = "data/hits.json"
     d = json.load(open(path, encoding="utf-8"))
@@ -35,6 +49,11 @@ def main():
     for h in d["hits"]:
         link = h.get("lien", "")
         if "tiktok.com/@" not in link: continue
+        try:
+            if refresh_stats(h): changed = True; LOG.append(f"{h['id']}: chiffres à jour ({h['vues']} M)")
+        except Exception as e:
+            LOG.append(f"{h['id']}: chiffres non relus ({type(e).__name__})")
+        time.sleep(2)
         out = f"thumbs/{h['id']}.jpg"
         if os.path.exists(out) and os.path.getsize(out) > 2000:
             if h.get("img") != out: h["img"] = out; changed = True
@@ -55,6 +74,8 @@ def main():
             time.sleep(1.5)
         time.sleep(1)
     if changed:
+        import datetime
+        d["maj"] = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).strftime("%d/%m/%Y")
         open(path, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=0))
     open("thumbs/log.txt", "w", encoding="utf-8").write("\n".join(LOG) + "\n")
 
