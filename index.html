@@ -73,7 +73,7 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 .count{color:var(--muted);font-size:14px;margin-bottom:22px}
 
 /* Grille des vidéos */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .card.like{border-color:var(--ok)}
 .card.dim{opacity:.45}
@@ -95,14 +95,14 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 .body p{margin:0;color:#d8d2e2;font-size:13.5px}
 .meta{font-size:12.5px;color:var(--muted)}
 .warn{font-size:12.5px;color:var(--warn)}
-.st{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:auto;padding-top:6px}
-.st button{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:8px 2px;font-size:12px;color:var(--muted)}
+.st{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:auto;padding-top:6px}
+.st button{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:7px 2px;font-size:11px;color:var(--muted)}
 .st button[aria-pressed=true]{background:var(--gold2);color:#191612;border-color:var(--gold2);font-weight:700}
 .st button[aria-pressed=true][data-s="J'aime"]{background:var(--ok);border-color:var(--ok);color:#0c2414}
 .st button[aria-pressed=true][data-s="Pas pour moi"]{background:var(--bad);border-color:var(--bad);color:#2a070c}
-.who{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0 8px}
-.nums b{display:block;font:600 17px/1.1 var(--f-h);letter-spacing:-.02em}
+.who{display:flex;justify-content:space-between;gap:6px;font-size:12px;color:var(--muted)}.who span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.who span:last-child{flex:none}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0 8px}
+.nums b{display:block;font:600 15px/1.1 var(--f-h);letter-spacing:-.02em}
 .nums span{font-size:12px;color:var(--muted)}
 .eng{font-size:12px;color:var(--muted);margin-top:-4px}
 .dur{position:absolute;right:12px;bottom:12px;font:700 13px var(--f-h);z-index:2;text-shadow:0 1px 4px #000}
@@ -110,6 +110,8 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 .empty{color:var(--muted);padding:40px 0;text-align:center;grid-column:1/-1}
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--gold2);color:#191612;padding:11px 20px;border-radius:999px;font-weight:700;z-index:50}
 
+@media (max-width:1250px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:1050px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 /* Téléphone */
 @media (max-width:860px){
   .burger{display:block}
@@ -227,7 +229,7 @@ function render(){
       <div class="body">
         <div class="who"><span>${esc(h.compte||'Source : article')}</span><span>${esc(h.date||'')}</span></div>
         <div class="t">${esc(h.titre)}</div>
-        <div class="nums"><div><b>${fmtV(h.vues)}</b><span>Vues</span></div><div><b>${h.likes!=null?fmtN(h.likes):'—'}</b><span>J'aime</span></div><div><b>${vph(h)!=null?fmtN(Math.round(vph(h))):'—'}</b><span>Vues/h moy.</span></div></div>
+        <div class="nums"><div><b>${fmtV(h.vues)}</b><span>Vues</span></div><div><b>${h.likes!=null?fmtN(h.likes):'—'}</b><span>J'aime</span></div><div><b>${vph(h)!=null?fmtN(Math.round(vph(h))):'—'}</b><span>Vues/h</span></div></div>
         ${h.likes!=null?`<div class="eng">${(Math.round((h.likes+(h.comms||0)+(h.partages||0))/(h.vues*1e6)*1000)/10).toString().replace('.',',')} % d'engagement · 💬 ${fmtN(h.comms)} · ↗ ${fmtN(h.partages)}</div>`:''}
         <div class="pills">${h.humeur?`<span class="pill">${esc(h.humeur)}</span>`:''}<span class="pill ${h.niche==='Fruits'?'f':''}">${esc(h.niche)}</span>${h.fruits?`<span class="pill">En fruits ${'★'.repeat(h.fruits)}${'☆'.repeat(5-h.fruits)}</span>`:''}</div>
         <p>${esc(h.resume)}</p>
