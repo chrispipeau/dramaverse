@@ -45,7 +45,7 @@ aside h3{font-size:12px;letter-spacing:.2em;color:var(--muted);margin:0 0 22px 1
 
 main{padding:46px clamp(18px,4vw,64px) 80px;min-width:0}
 .kick{font:700 13px var(--f-h);letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
-h1{font:800 clamp(38px,6vw,76px)/1.02 var(--f-h);letter-spacing:-.045em;margin:14px 0 18px}
+h1{font:800 clamp(30px,4.2vw,54px)/1.04 var(--f-h);letter-spacing:-.045em;margin:14px 0 18px}
 h1 span{color:var(--gold);font-weight:600}
 .lead{font-size:16.5px;color:#d8d2e2;margin:0 0 34px}
 
@@ -73,26 +73,26 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 .count{color:var(--muted);font-size:14px;margin-bottom:22px}
 
 /* Grille des vidéos */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .card.like{border-color:var(--ok)}
 .card.dim{opacity:.45}
-.thumb{position:relative;aspect-ratio:9/16;display:block;text-decoration:none;overflow:hidden;background:#221d2c}
+.thumb{position:relative;aspect-ratio:3/4;display:block;text-decoration:none;overflow:hidden;background:#221d2c}
 .thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.thumb .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 20px 44px;font:800 24px/1.1 var(--f-h);letter-spacing:-.02em}
+.thumb .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px 14px 36px;font:800 18px/1.1 var(--f-h);letter-spacing:-.02em}
 .n,.views{pointer-events:none}
 .n{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.55);border-radius:6px;padding:2px 7px;font:700 13px var(--f-h);color:var(--gold2);z-index:2}
 .views{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);border-radius:999px;padding:4px 12px;font:800 16px var(--f-h);color:var(--gold);z-index:2}
 .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.75);display:grid;place-items:center;z-index:2}
 .play::before{content:"";border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
 .thumb:hover .play{background:rgba(0,0,0,.6)}
-.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.t{font:700 18px/1.25 var(--f-h);letter-spacing:-.01em}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.t{font:700 15.5px/1.25 var(--f-h);letter-spacing:-.01em}
 .pills{display:flex;gap:6px;flex-wrap:wrap}
 .pill{font-size:12px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
 .pill.f{color:var(--ok);border-color:#3c5e45}
-.body p{margin:0;color:#d8d2e2;font-size:14.5px}
+.body p{margin:0;color:#d8d2e2;font-size:13.5px}
 .meta{font-size:12.5px;color:var(--muted)}
 .warn{font-size:12.5px;color:var(--warn)}
 .st{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:auto;padding-top:6px}
@@ -102,7 +102,7 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 .st button[aria-pressed=true][data-s="Pas pour moi"]{background:var(--bad);border-color:var(--bad);color:#2a070c}
 .who{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0 8px}
-.nums b{display:block;font:600 21px/1.1 var(--f-h);letter-spacing:-.02em}
+.nums b{display:block;font:600 17px/1.1 var(--f-h);letter-spacing:-.02em}
 .nums span{font-size:12px;color:var(--muted)}
 .eng{font-size:12px;color:var(--muted);margin-top:-4px}
 .dur{position:absolute;right:12px;bottom:12px;font:700 13px var(--f-h);z-index:2;text-shadow:0 1px 4px #000}
@@ -123,6 +123,9 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
   main{padding-top:30px}
   .search input{font-size:16px}
   select{flex:1 1 140px;min-width:0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .st{grid-template-columns:repeat(2,1fr)}
+  .nums b{font-size:15px}
 }
 </style>
 </head>
