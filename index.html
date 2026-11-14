@@ -20,6 +20,7 @@ html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--f-b)
 a{color:inherit}
 button{font:inherit;cursor:pointer;color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+[hidden]{display:none!important}
 
 /* Barre du haut */
 .top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:16px;height:76px;padding:0 24px;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -113,6 +114,16 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
 
 @media (max-width:1250px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (max-width:1050px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ccard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px 26px;margin-bottom:20px}
+.ccard h3{font:600 26px var(--f-h);letter-spacing:-.02em;margin:0 0 18px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:500;color:var(--fg);padding:10px 12px;border-bottom:1px solid var(--line);font-size:15px}
+td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
+.acc{display:inline-block;border:1px solid var(--line);border-radius:12px;padding:8px 18px;font-weight:700}
+.up{color:var(--ok);font-size:12.5px;margin-left:6px}
+.cnote{color:var(--muted);font-size:13px;margin:10px 0 0}
+#chart svg{width:100%;height:220px;display:block}
 /* Téléphone */
 @media (max-width:860px){
   .burger{display:block}
@@ -149,6 +160,7 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
     <button data-p="like"><small>02</small>Ma sélection <em id="nLike">0</em><i>↗</i></button>
     <button data-p="faite"><small>03</small>Déjà faites <em id="nDone">0</em><i>↗</i></button>
     <button data-p="non"><small>04</small>Écartées<i>↗</i></button>
+    <button data-p="compte"><small>05</small>Mon compte<i>↗</i></button>
   </nav>
   <div class="aside-foot">Les vidéos sont ajoutées par Claude à chaque veille.<br>Tes choix restent dans ce navigateur.</div>
 </aside>
@@ -177,6 +189,11 @@ h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0
   <div class="head2"><h2 id="h2">Le radar</h2><span class="sp"></span><button class="link" id="copyLikes">Copier ma sélection pour Claude ↓</button></div>
   <div class="count" id="count"></div>
   <div class="grid" id="list"></div>
+  <section id="compteView" hidden>
+    <div class="ccard"><h3>Tous tes comptes</h3><div class="tw"><table id="ctab"></table></div></div>
+    <div class="ccard"><h3>Évolution des abonnés</h3><div id="chart"></div><p class="cnote" id="cnote"></p></div>
+    <div class="ccard" id="cvids"></div>
+  </section>
 </main>
 </div>
 <div class="toast" id="toast" hidden></div>
@@ -187,10 +204,11 @@ const PAGES={
   radar:{kick:'01 / Le radar',h1:'Les hits qui cartonnent,<br><span>bientôt en fruits.</span>',lead:"Les vidéos qui ont percé sur TikTok, triées par vues. Coche celles que tu aimes : ta prochaine histoire sort de ta sélection.",h2:'Le radar',f:h=>statut(h)==='À regarder'||statut(h)==="J'aime"},
   like:{kick:'02 / Ma sélection',h1:'Tes coups de cœur,<br><span>prêts à tourner.</span>',lead:"Les vidéos que tu as cochées « J'aime ». Copie ta sélection et colle-la à Claude : il commence par la plus vue.",h2:'Ma sélection',f:h=>statut(h)==="J'aime"},
   faite:{kick:'03 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
+  compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
 const KEY='dramaverse-statuts-v1';
-let HITS=[],PAGE='radar',NICHE='Toutes';
+let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,like:1,faite:1,non:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
 let MINE={};try{MINE=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 const THUMBS={};
 const $=s=>document.querySelector(s);
@@ -204,8 +222,28 @@ const statut=h=>MINE[h.id]||h.statut||'À regarder';
 const hue=id=>[...id].reduce((a,c)=>(a*31+c.charCodeAt(0))%360,7);
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2000)}
 
+let COMPTE=null;
+const show=(sel,on)=>document.querySelectorAll(sel).forEach(e=>e.hidden=!on);
+function renderCompte(){
+  const box=$('#compteView');
+  if(!COMPTE){box.querySelector('#ctab').innerHTML='<tr><td>Chargement…</td></tr>';return}
+  const rows=COMPTE.comptes.map(c=>{const r=c.releves,l=r[r.length-1],p=r[r.length-2];
+    const d=(k)=>p?`<span class="up">${l[k]-p[k]>=0?'+':''}${fmtN(l[k]-p[k])}</span>`:'';
+    return `<tr><td><span class="acc">${esc(c.compte)}</span></td><td>${fmtN(l.abonnes)}${d('abonnes')}</td><td>${fmtN(l.jaime)}${d('jaime')}</td><td>${l.videos}${d('videos')}</td><td>${esc(l.date)}</td></tr>`}).join('');
+  box.querySelector('#ctab').innerHTML='<tr><th>Compte</th><th>Abonnés</th><th>J\'aime</th><th>Vidéos</th><th>Dernier relevé</th></tr>'+rows;
+  const r=COMPTE.comptes[0].releves;
+  if(r.length<2){$('#chart').innerHTML='';$('#cnote').textContent='Premier relevé le '+r[0].date+'. La courbe apparaît dès le prochain relevé (à chaque veille du samedi).'}
+  else{const W=800,Hh=220,pad=30,vals=r.map(x=>x.abonnes),mn=Math.min(...vals),mx=Math.max(...vals),rg=Math.max(1,mx-mn);
+    const pts=r.map((x,i)=>[pad+i*(W-2*pad)/(r.length-1),Hh-pad-(x.abonnes-mn)/rg*(Hh-2*pad)]);
+    $('#chart').innerHTML=`<svg viewBox="0 0 ${W} ${Hh}"><polyline fill="none" stroke="#f2cf73" stroke-width="3" points="${pts.map(p=>p.join(',')).join(' ')}"/>${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#f2cf73"/><text x="${p[0]}" y="${p[1]-12}" fill="#f4f1ea" font-size="13" text-anchor="middle">${fmtN(r[i].abonnes)}</text><text x="${p[0]}" y="${Hh-6}" fill="#9a93a8" font-size="12" text-anchor="middle">${r[i].date.slice(0,5)}</text>`).join('')}</svg>`;
+    $('#cnote').textContent=`${r.length} relevés.`}
+  const V=COMPTE.videos||[];
+  $('#cvids').innerHTML='<h3>Tes vidéos</h3>'+(V.length?'<div class="tw"><table><tr><th>Vidéo</th><th>Vues</th><th>J\'aime</th><th>Publiée</th></tr>'+V.slice().sort((a,b)=>b.vues-a.vues).map(v=>`<tr><td><a href="${esc(v.lien)}" target="_blank" rel="noopener">${esc(v.titre)}</a></td><td>${fmtN(v.vues)}</td><td>${fmtN(v.likes)}</td><td>${esc(v.date||'')}</td></tr>`).join('')+'</table></div>':'<p class="cnote">La liste de tes vidéos et leurs vues sera remplie à la prochaine veille.</p>');
+}
 function render(){
   const H=HITS,P=PAGES[PAGE];
+  const isC=PAGE==='compte';show('#compteView',isC);show('.search,.bar,.tiles,.head2,#count,#list',!isC);
+  if(isC){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderCompte();return}
   $('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;$('#h2').textContent=P.h2;
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));
   const n=s=>H.filter(h=>statut(h)===s).length;
@@ -250,7 +288,7 @@ async function loadThumbs(){
 }
 
 document.addEventListener('click',async e=>{
-  const nb=e.target.closest('#nav button');if(nb){PAGE=nb.dataset.p;$('#aside').classList.remove('open');render();scrollTo({top:0,behavior:'smooth'});return}
+  const nb=e.target.closest('#nav button');if(nb){PAGE=nb.dataset.p;history.replaceState(null,'','#'+PAGE);$('#aside').classList.remove('open');render();scrollTo({top:0,behavior:'smooth'});return}
   if(e.target.id==='burger'){$('#aside').classList.toggle('open');return}
   const c=e.target.closest('.chip');if(c){NICHE=c.dataset.n;render();return}
   const b=e.target.closest('.st button');
@@ -268,6 +306,7 @@ $('#q').addEventListener('input',render);
 $('#sort').addEventListener('change',render);
 $('#humeur').addEventListener('change',render);
 
+fetch('data/compte.json?'+Date.now()).then(r=>r.json()).then(d=>{COMPTE=d;if(PAGE==='compte')render()}).catch(()=>{});
 fetch('data/hits.json?'+Date.now()).then(r=>r.json()).then(d=>{HITS=d.hits||[];$('#maj').textContent='Mise à jour le '+(d.maj||'');render()})
   .catch(()=>{$('#list').innerHTML='<div class="empty">Impossible de charger la banque. Recharge la page.</div>'});
 </script>
