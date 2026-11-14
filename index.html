@@ -6,155 +6,257 @@
 <title>DRAMAVERSE · Banque de hits</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍋</text></svg>">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
 :root{
-  --bg:#14101a;--surface:#1e1827;--surface2:#271f33;--line:#352b44;
-  --fg:#f1ecf7;--muted:#a095b0;--accent:#ff7a3d;--accent-fg:#1a0e06;
-  --ok:#5fd68a;--warn:#f2b64d;--bad:#ff6b7d;--gold:#f5c542;
-  --f-display:'Bricolage Grotesque',system-ui,sans-serif;
-  --f-body:'DM Sans',system-ui,sans-serif;
+  --bg:#07060a;--panel:#14111c;--panel2:#1c1826;--line:#2a2535;--side:#0b0a0f;
+  --fg:#f4f1ea;--muted:#9a93a8;--gold:#f2cf73;--gold2:#e9dcc0;--sel:#2e3a30;
+  --ok:#7fd99a;--bad:#ff7d8c;--warn:#f2b64d;
+  --f-h:'Manrope',system-ui,sans-serif;--f-b:'DM Sans',system-ui,sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--f-body);
-  padding:0 max(16px,env(safe-area-inset-left)) 60px max(16px,env(safe-area-inset-right))}
-.wrap{max-width:1180px;margin:0 auto}
-header{position:sticky;top:0;z-index:10;background:var(--bg);padding:16px 0 12px;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-h1{font:800 24px var(--f-display);letter-spacing:-.02em;margin:0}
-h1 span{color:var(--gold)}
-.maj{color:var(--muted);font-size:13px}
-.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
-input[type=search]{flex:1 1 220px;min-width:0;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font:inherit}
-select{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:9px 10px;font:inherit}
-button{font:inherit;cursor:pointer}
-.btn{background:var(--accent);color:var(--accent-fg);border:0;border-radius:10px;padding:9px 14px;font-weight:700}
-.btn.ghost{background:var(--surface2);color:var(--fg);border:1px solid var(--line);font-weight:500}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0}
-.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
-.tile b{display:block;font:800 24px var(--f-display);font-variant-numeric:tabular-nums}
-.tile span{font-size:12.5px;color:var(--muted)}
-.filters{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
-.frow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.frow > em{font-style:normal;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;width:62px}
-.chip{background:var(--surface);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px}
-.chip[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg);font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.card.like{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok) inset}
-.card.done{opacity:.55}
-.card.nope{opacity:.4}
-.hhead{display:flex;gap:10px;align-items:flex-start}
-.ht{flex:1;font:700 17px/1.25 var(--f-display);min-width:0}
-.hv{font:800 22px var(--f-display);color:var(--gold);white-space:nowrap;font-variant-numeric:tabular-nums}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--f-b)}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* Barre du haut */
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:16px;height:76px;padding:0 24px;background:var(--bg);border-bottom:1px solid var(--line)}
+.burger{display:none;background:none;border:0;padding:8px;font-size:22px}
+.logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(145deg,#2c2a1f,#14130e);border:1px solid #3b3726;display:grid;place-items:center;font:800 17px var(--f-h);color:var(--gold);letter-spacing:-.04em}
+.bn b{display:block;font:800 26px/1 var(--f-h);letter-spacing:-.03em}
+.bn span{font-size:10.5px;letter-spacing:.22em;color:var(--gold2);text-transform:uppercase}
+.top .sp{flex:1}
+.maj{font-size:13px;color:var(--muted)}
+
+/* Structure */
+.shell{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:calc(100vh - 76px)}
+aside{background:var(--side);border-right:1px solid var(--line);padding:40px 20px 24px;display:flex;flex-direction:column;position:sticky;top:76px;height:calc(100vh - 76px)}
+aside h3{font-size:12px;letter-spacing:.2em;color:var(--muted);margin:0 0 22px 18px;font-weight:600}
+.nav{display:flex;flex-direction:column;gap:6px}
+.nav button{display:flex;align-items:center;gap:14px;background:none;border:0;border-radius:12px;padding:20px 16px;text-align:left;font:700 17px var(--f-h);white-space:nowrap}
+.nav button small{font:500 11px var(--f-b);color:var(--muted);align-self:flex-start;margin-top:2px}
+.nav button i{margin-left:auto;font-style:normal;color:var(--muted)}
+.nav button em{font-style:normal;font:600 12px var(--f-b);background:var(--panel2);border-radius:999px;padding:1px 8px;color:var(--gold)}
+.nav button[aria-current=true]{background:var(--sel)}
+.nav button:hover{background:var(--panel)}
+.aside-foot{margin-top:auto;border-top:1px solid var(--line);padding:18px 18px 0;font-size:12.5px;color:var(--muted)}
+
+main{padding:46px clamp(18px,4vw,64px) 80px;min-width:0}
+.kick{font:700 13px var(--f-h);letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+h1{font:800 clamp(38px,6vw,76px)/1.02 var(--f-h);letter-spacing:-.045em;margin:14px 0 18px}
+h1 span{color:var(--gold);font-weight:600}
+.lead{font-size:16.5px;color:#d8d2e2;margin:0 0 34px}
+
+/* Recherche + filtres */
+.search{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px 12px 12px 22px}
+.search input{flex:1;min-width:0;background:none;border:0;color:var(--fg);font:500 19px var(--f-h);outline:none}
+.search input::placeholder{color:var(--muted)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.bar .sp{flex:1}
+select{background:var(--gold2);color:#191612;border:0;border-radius:10px;padding:12px 14px;font:500 15px var(--f-b);min-width:150px}
+.chips{display:flex;gap:18px;flex-wrap:wrap}
+.chip{background:none;border:0;color:var(--muted);font-size:14px;padding:4px 0}
+.chip::after{content:" ↗";font-size:11px}
+.chip[aria-pressed=true]{color:var(--gold)}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:34px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.tile b{display:block;font:800 32px/1.1 var(--f-h);letter-spacing:-.03em}
+.tile span{color:var(--muted);font-size:13px}
+
+.head2{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+h2{font:600 clamp(28px,3.5vw,42px)/1.1 var(--f-h);letter-spacing:-.02em;margin:0}
+.head2 .sp{flex:1}
+.link{background:none;border:0;color:var(--gold);font-size:14.5px}
+.count{color:var(--muted);font-size:14px;margin-bottom:22px}
+
+/* Grille des vidéos */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card.like{border-color:var(--ok)}
+.card.dim{opacity:.45}
+.thumb{position:relative;aspect-ratio:4/5;display:block;text-decoration:none;overflow:hidden;background:#221d2c}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 20px 44px;font:800 24px/1.1 var(--f-h);letter-spacing:-.02em}
+.n{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.55);border-radius:6px;padding:2px 7px;font:700 13px var(--f-h);color:var(--gold2);z-index:2}
+.views{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);border-radius:999px;padding:4px 12px;font:800 16px var(--f-h);color:var(--gold);z-index:2}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.75);display:grid;place-items:center;z-index:2}
+.play::before{content:"";border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.thumb:hover .play{background:rgba(0,0,0,.6)}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.t{font:700 18px/1.25 var(--f-h);letter-spacing:-.01em}
 .pills{display:flex;gap:6px;flex-wrap:wrap}
-.pill{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-.pill.fruit{color:var(--ok);border-color:var(--ok)}
-.card p{margin:0}
+.pill{font-size:12px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.f{color:var(--ok);border-color:#3c5e45}
+.body p{margin:0;color:#d8d2e2;font-size:14.5px}
 .meta{font-size:12.5px;color:var(--muted)}
 .warn{font-size:12.5px;color:var(--warn)}
-.see{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--surface2);border:1px solid var(--line);color:var(--fg);text-decoration:none;border-radius:10px;padding:8px 12px;font-weight:700}
-.see:hover{border-color:var(--accent)}
-.st{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:auto}
-.st button{background:var(--surface2);color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:7px 2px;font-size:12.5px}
-.st button[aria-pressed=true][data-s="J'aime"]{background:var(--ok);color:#0b2414;border-color:var(--ok);font-weight:700}
-.st button[aria-pressed=true][data-s="Pas pour moi"]{background:var(--bad);color:#2a070c;border-color:var(--bad);font-weight:700}
-.st button[aria-pressed=true][data-s="Faite"]{background:var(--muted);color:var(--bg);border-color:var(--muted);font-weight:700}
-.st button[aria-pressed=true][data-s="À regarder"]{background:var(--fg);color:var(--bg);border-color:var(--fg);font-weight:700}
-.empty{color:var(--muted);padding:30px 0;text-align:center}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:500;z-index:20}
-footer{margin-top:30px;color:var(--muted);font-size:12.5px;text-align:center}
+.st{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:auto;padding-top:6px}
+.st button{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:8px 2px;font-size:12px;color:var(--muted)}
+.st button[aria-pressed=true]{background:var(--gold2);color:#191612;border-color:var(--gold2);font-weight:700}
+.st button[aria-pressed=true][data-s="J'aime"]{background:var(--ok);border-color:var(--ok);color:#0c2414}
+.st button[aria-pressed=true][data-s="Pas pour moi"]{background:var(--bad);border-color:var(--bad);color:#2a070c}
+.who{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0 8px}
+.nums b{display:block;font:600 21px/1.1 var(--f-h);letter-spacing:-.02em}
+.nums span{font-size:12px;color:var(--muted)}
+.eng{font-size:12px;color:var(--muted);margin-top:-4px}
+.dur{position:absolute;right:12px;bottom:12px;font:700 13px var(--f-h);z-index:2;text-shadow:0 1px 4px #000}
+.tag{position:absolute;left:12px;bottom:12px;font:700 12px var(--f-h);z-index:2;text-shadow:0 1px 4px #000;color:var(--gold2)}
+.empty{color:var(--muted);padding:40px 0;text-align:center;grid-column:1/-1}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--gold2);color:#191612;padding:11px 20px;border-radius:999px;font-weight:700;z-index:50}
+
+/* Téléphone */
+@media (max-width:860px){
+  .burger{display:block}
+  .top{padding:0 14px;gap:10px;height:68px}
+  .logo{width:42px;height:42px}
+  .bn b{font-size:21px}.bn span{font-size:9px;letter-spacing:.16em}
+  .maj{display:none}
+  .shell{grid-template-columns:1fr}
+  aside{position:fixed;top:68px;left:0;bottom:0;width:280px;height:auto;z-index:40;transform:translateX(-100%);transition:transform .2s}
+  aside.open{transform:none;box-shadow:20px 0 60px rgba(0,0,0,.6)}
+  main{padding-top:30px}
+  .search input{font-size:16px}
+  select{flex:1 1 140px;min-width:0}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <div class="brand"><h1>DRAMAVERSE <span>· Banque de hits</span></h1><span class="maj" id="maj"></span></div>
-  <div class="tools">
-    <input type="search" id="q" placeholder="Chercher un titre, un compte, un mot…" aria-label="Chercher">
+<header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="logo">DV</div>
+  <div class="bn"><b>DRAMAVERSE</b><span>Hits · Histoires · Fruits</span></div>
+  <span class="sp"></span>
+  <span class="maj" id="maj"></span>
+</header>
+
+<div class="shell">
+<aside id="aside">
+  <h3>TON ESPACE</h3>
+  <nav class="nav" id="nav">
+    <button data-p="radar" aria-current="true"><small>01</small>Le radar<i>↗</i></button>
+    <button data-p="like"><small>02</small>Ma sélection <em id="nLike">0</em><i>↗</i></button>
+    <button data-p="faite"><small>03</small>Déjà faites <em id="nDone">0</em><i>↗</i></button>
+    <button data-p="non"><small>04</small>Écartées<i>↗</i></button>
+  </nav>
+  <div class="aside-foot">Les vidéos sont ajoutées par Claude à chaque veille.<br>Tes choix restent dans ce navigateur.</div>
+</aside>
+
+<main>
+  <div class="kick" id="kick">01 / Le radar</div>
+  <h1 id="h1">Les hits qui cartonnent,<br><span>bientôt en fruits.</span></h1>
+  <p class="lead" id="lead">Les vidéos qui ont percé sur TikTok, triées par vues. Coche celles que tu aimes : ta prochaine histoire sort de ta sélection.</p>
+
+  <div class="search"><span style="color:var(--muted);font-size:20px">⌕</span><input type="search" id="q" placeholder="Chercher un titre, un compte, un mot…" aria-label="Chercher"></div>
+
+  <div class="bar">
+    <div class="chips" id="niche"></div>
+    <span class="sp"></span>
+    <select id="humeur" aria-label="Humeur"></select>
     <select id="sort" aria-label="Trier">
-      <option value="vues">Les plus vues d'abord</option>
+      <option value="vues">Les plus vues</option>
+      <option value="vh">Plus de vues par heure</option>
       <option value="fruits">Les plus faciles en fruits</option>
       <option value="titre">Ordre alphabétique</option>
     </select>
-    <button class="btn" id="copyLikes">Copier mes « J'aime » pour Claude</button>
   </div>
-</header>
 
-<div class="tiles" id="tiles"></div>
+  <div class="tiles" id="tiles"></div>
 
-<div class="filters">
-  <div class="frow"><em>Statut</em><span id="fStatut" class="frow"></span></div>
-  <div class="frow"><em>Niche</em><span id="fNiche" class="frow"></span></div>
-  <div class="frow"><em>Humeur</em><span id="fHumeur" class="frow"></span></div>
-</div>
-
-<div class="grid" id="list"></div>
-<footer>Les vidéos sont ajoutées par Claude à chaque veille. Tes choix (« J'aime », « Faite »…) restent enregistrés dans ce navigateur.</footer>
+  <div class="head2"><h2 id="h2">Le radar</h2><span class="sp"></span><button class="link" id="copyLikes">Copier ma sélection pour Claude ↓</button></div>
+  <div class="count" id="count"></div>
+  <div class="grid" id="list"></div>
+</main>
 </div>
 <div class="toast" id="toast" hidden></div>
 
 <script>
 const ST=["À regarder","J'aime","Pas pour moi","Faite"];
+const PAGES={
+  radar:{kick:'01 / Le radar',h1:'Les hits qui cartonnent,<br><span>bientôt en fruits.</span>',lead:"Les vidéos qui ont percé sur TikTok, triées par vues. Coche celles que tu aimes : ta prochaine histoire sort de ta sélection.",h2:'Le radar',f:h=>statut(h)==='À regarder'||statut(h)==="J'aime"},
+  like:{kick:'02 / Ma sélection',h1:'Tes coups de cœur,<br><span>prêts à tourner.</span>',lead:"Les vidéos que tu as cochées « J'aime ». Copie ta sélection et colle-la à Claude : il commence par la plus vue.",h2:'Ma sélection',f:h=>statut(h)==="J'aime"},
+  faite:{kick:'03 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
+  non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
+};
 const KEY='dramaverse-statuts-v1';
-let HITS=[],F={statut:'Tous',niche:'Toutes',humeur:'Toutes'};
+let HITS=[],PAGE='radar',NICHE='Toutes';
 let MINE={};try{MINE=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
+const THUMBS={};
 const $=s=>document.querySelector(s);
 const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmtV=v=>v>=1?(Math.round(v*10)/10).toString().replace('.',',')+' M':Math.round((v||0)*1000)+' K';
 const fmtN=n=>n==null?'—':n>=1e6?(Math.round(n/1e5)/10).toString().replace('.',',')+' M':n>=1e3?(Math.round(n/100)/10).toString().replace('.',',')+' K':String(n);
 const fmtD=s=>s>=60?Math.floor(s/60)+' min '+String(s%60).padStart(2,'0'):s+' s';
+const ageH=h=>{if(!h.date)return null;const[d,m,y]=h.date.split('/').map(Number);const t=(Date.now()-new Date(y,m-1,d))/36e5;return t>1?t:null};
+const vph=h=>{const a=ageH(h);return a?h.vues*1e6/a:null};
 const statut=h=>MINE[h.id]||h.statut||'À regarder';
-function saveMine(){try{localStorage.setItem(KEY,JSON.stringify(MINE))}catch(e){}}
+const hue=id=>[...id].reduce((a,c)=>(a*31+c.charCodeAt(0))%360,7);
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2000)}
-function chips(id,key,vals){$('#'+id).innerHTML=vals.map(v=>`<button class="chip" data-k="${key}" data-v="${esc(v)}" aria-pressed="${F[key]===v}">${esc(v)}</button>`).join('')}
 
 function render(){
-  const H=HITS;
+  const H=HITS,P=PAGES[PAGE];
+  $('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;$('#h2').textContent=P.h2;
+  document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));
   const n=s=>H.filter(h=>statut(h)===s).length;
-  $('#tiles').innerHTML=`
-    <div class="tile"><b>${H.length}</b><span>vidéos en stock</span></div>
-    <div class="tile"><b>${n("J'aime")}</b><span>j'aime</span></div>
-    <div class="tile"><b>${n('À regarder')}</b><span>à regarder</span></div>
-    <div class="tile"><b>${n('Faite')}</b><span>déjà faites</span></div>`;
-  chips('fStatut','statut',['Tous',...ST]);
-  chips('fNiche','niche',['Toutes','Fruits','Hors niche']);
-  chips('fHumeur','humeur',['Toutes',...[...new Set(H.map(h=>h.humeur).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'))]);
-  const q=$('#q').value.trim().toLowerCase();
-  const so=$('#sort').value;
-  let L=H.filter(h=>(F.statut==='Tous'||statut(h)===F.statut)&&(F.niche==='Toutes'||h.niche===F.niche)&&(F.humeur==='Toutes'||h.humeur===F.humeur)
-    &&(!q||[h.titre,h.resume,h.compte,h.humeur,h.note].join(' ').toLowerCase().includes(q)));
-  L.sort(so==='titre'?(a,b)=>a.titre.localeCompare(b.titre,'fr'):so==='fruits'?(a,b)=>(b.fruits||0)-(a.fruits||0)||(b.vues||0)-(a.vues||0):(a,b)=>(b.vues||0)-(a.vues||0));
-  $('#list').innerHTML=L.length?L.map(h=>{const s=statut(h);const cls=s==="J'aime"?'like':s==='Faite'?'done':s==='Pas pour moi'?'nope':'';
+  $('#nLike').textContent=n("J'aime");$('#nDone').textContent=n('Faite');
+  $('#tiles').innerHTML=`<div class="tile"><b>${H.length}</b><span>vidéos en stock</span></div><div class="tile"><b>${n("J'aime")}</b><span>dans ta sélection</span></div><div class="tile"><b>${n('À regarder')}</b><span>à regarder</span></div><div class="tile"><b>${n('Faite')}</b><span>déjà faites</span></div>`;
+  $('#niche').innerHTML=['Toutes','Fruits','Hors niche'].map(v=>`<button class="chip" data-n="${v}" aria-pressed="${NICHE===v}">${v}</button>`).join('');
+  const hs=$('#humeur'),cur=hs.value||'Toutes';
+  hs.innerHTML=['Toutes',...[...new Set(H.map(h=>h.humeur).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'))].map(v=>`<option value="${esc(v)}"${v===cur?' selected':''}>${v==='Toutes'?'Toutes les humeurs':esc(v)}</option>`).join('');
+  const q=$('#q').value.trim().toLowerCase(),so=$('#sort').value,hu=hs.value;
+  let L=H.filter(h=>P.f(h)&&(NICHE==='Toutes'||h.niche===NICHE)&&(hu==='Toutes'||h.humeur===hu)&&(!q||[h.titre,h.resume,h.compte,h.humeur,h.note].join(' ').toLowerCase().includes(q)));
+  L.sort(so==='vh'?(a,b)=>(vph(b)??-1)-(vph(a)??-1):so==='titre'?(a,b)=>a.titre.localeCompare(b.titre,'fr'):so==='fruits'?(a,b)=>(b.fruits||0)-(a.fruits||0)||(b.vues||0)-(a.vues||0):(a,b)=>(b.vues||0)-(a.vues||0));
+  $('#count').textContent=`${L.length} affichée${L.length>1?'s':''} · ${H.length} en stock`;
+  $('#list').innerHTML=L.length?L.map((h,i)=>{const s=statut(h),g=hue(h.id);
+    const cls=s==="J'aime"?'like':(s==='Faite'||s==='Pas pour moi')&&PAGE==='radar'?'dim':'';
+    const img=THUMBS[h.id]?`<img src="${esc(THUMBS[h.id])}" alt="" loading="lazy" onerror="this.remove()">`:'';
     return `<article class="card ${cls}">
-      <div class="hhead"><div class="ht">${esc(h.titre)}</div><div class="hv">${fmtV(h.vues)}</div></div>
-      <div class="pills">${h.humeur?`<span class="pill">${esc(h.humeur)}</span>`:''}<span class="pill ${h.niche==='Fruits'?'fruit':''}">${esc(h.niche)}</span>${h.fruits?`<span class="pill">En fruits ${'★'.repeat(h.fruits)}${'☆'.repeat(5-h.fruits)}</span>`:''}${h.compte?`<span class="pill">${esc(h.compte)}</span>`:''}</div>
-      <p>${esc(h.resume)}</p>
-      ${h.likes!=null?`<div class="meta">❤ ${fmtN(h.likes)} · 💬 ${fmtN(h.comms)} · ↗ ${fmtN(h.partages)}${h.duree?' · '+fmtD(h.duree):''}${h.date?' · postée le '+esc(h.date):''}</div>`:''}
-      ${h.verif?`<div class="warn">⚠ ${esc(h.verif)}</div>`:''}
-      ${h.note?`<div class="warn">${esc(h.note)}</div>`:''}
-      ${h.lien?`<a class="see" href="${esc(h.lien)}" target="_blank" rel="noopener">▶ Voir la vidéo</a>`:''}
-      <div class="st" data-id="${esc(h.id)}">${ST.map(x=>`<button data-s="${esc(x)}" aria-pressed="${x===s}">${esc(x)}</button>`).join('')}</div>
-    </article>`}).join(''):`<div class="empty">Aucune vidéo avec ces filtres.</div>`;
+      <a class="thumb" href="${esc(h.lien||'#')}" target="_blank" rel="noopener" aria-label="Voir la vidéo ${esc(h.titre)}" style="background:linear-gradient(160deg,hsl(${g} 45% 26%),hsl(${(g+40)%360} 40% 11%))">
+        <div class="ph">${esc(h.titre)}</div>${img}
+        <span class="n">${String(i+1).padStart(2,'0')}</span><span class="views">${fmtV(h.vues)}</span><span class="play"></span>${h.duree?`<span class="dur">${fmtD(h.duree).replace(" min ",":")}</span>`:""}<span class="tag">${h.niche==="Fruits"?"🍋 FRUITS":"HORS NICHE"}</span>
+      </a>
+      <div class="body">
+        <div class="who"><span>${esc(h.compte||'Source : article')}</span><span>${esc(h.date||'')}</span></div>
+        <div class="t">${esc(h.titre)}</div>
+        <div class="nums"><div><b>${fmtV(h.vues)}</b><span>Vues</span></div><div><b>${h.likes!=null?fmtN(h.likes):'—'}</b><span>J'aime</span></div><div><b>${vph(h)!=null?fmtN(Math.round(vph(h))):'—'}</b><span>Vues/h moy.</span></div></div>
+        ${h.likes!=null?`<div class="eng">${(Math.round((h.likes+(h.comms||0)+(h.partages||0))/(h.vues*1e6)*1000)/10).toString().replace('.',',')} % d'engagement · 💬 ${fmtN(h.comms)} · ↗ ${fmtN(h.partages)}</div>`:''}
+        <div class="pills">${h.humeur?`<span class="pill">${esc(h.humeur)}</span>`:''}<span class="pill ${h.niche==='Fruits'?'f':''}">${esc(h.niche)}</span>${h.fruits?`<span class="pill">En fruits ${'★'.repeat(h.fruits)}${'☆'.repeat(5-h.fruits)}</span>`:''}</div>
+        <p>${esc(h.resume)}</p>
+        ${h.verif?`<div class="warn">⚠ ${esc(h.verif)}</div>`:''}${h.note?`<div class="warn">${esc(h.note)}</div>`:''}
+        <div class="st" data-id="${esc(h.id)}">${ST.map(x=>`<button data-s="${esc(x)}" aria-pressed="${x===s}">${esc(x)}</button>`).join('')}</div>
+      </div></article>`}).join(''):`<div class="empty">Rien ici pour l'instant.</div>`;
+}
+
+/* Vignettes TikTok (si TikTok les donne ; sinon on garde le fond coloré) */
+async function loadThumbs(){
+  for(const h of HITS){
+    if(!h.lien||!h.lien.includes('tiktok.com/'))continue;
+    try{const r=await fetch('https://www.tiktok.com/oembed?url='+encodeURIComponent(h.lien));if(!r.ok)continue;const d=await r.json();if(d.thumbnail_url){THUMBS[h.id]=d.thumbnail_url}}catch(e){}
+  }
+  render();
 }
 
 document.addEventListener('click',async e=>{
-  const c=e.target.closest('.chip');if(c){F[c.dataset.k]=c.dataset.v;render();return}
+  const nb=e.target.closest('#nav button');if(nb){PAGE=nb.dataset.p;$('#aside').classList.remove('open');render();scrollTo({top:0,behavior:'smooth'});return}
+  if(e.target.id==='burger'){$('#aside').classList.toggle('open');return}
+  const c=e.target.closest('.chip');if(c){NICHE=c.dataset.n;render();return}
   const b=e.target.closest('.st button');
-  if(b){const id=b.parentElement.dataset.id;MINE[id]=b.dataset.s;saveMine();render();toast(`« ${b.dataset.s} » enregistré`);return}
+  if(b){MINE[b.parentElement.dataset.id]=b.dataset.s;try{localStorage.setItem(KEY,JSON.stringify(MINE))}catch(_){}render();toast(`« ${b.dataset.s} » enregistré`);return}
   if(e.target.id==='copyLikes'){
     const L=HITS.filter(h=>statut(h)==="J'aime").sort((a,b)=>(b.vues||0)-(a.vues||0));
-    if(!L.length){toast("Aucun « J'aime » pour l'instant");return}
-    const txt="Mes J'aime de la banque de hits :\n"+L.map(h=>`- ${h.titre} (${fmtV(h.vues)}) [${h.id}]`).join('\n');
+    if(!L.length){toast("Ta sélection est vide");return}
+    const txt="Ma sélection de la banque de hits :\n"+L.map(h=>`- ${h.titre} (${fmtV(h.vues)}) [${h.id}]`).join('\n');
     try{await navigator.clipboard.writeText(txt);toast('Copié : colle-le à Claude')}catch(_){prompt('Copie ce texte :',txt)}
   }
 });
 $('#q').addEventListener('input',render);
 $('#sort').addEventListener('change',render);
+$('#humeur').addEventListener('change',render);
 
-fetch('data/hits.json?'+Date.now()).then(r=>r.json()).then(d=>{HITS=d.hits||[];$('#maj').textContent='Mise à jour le '+(d.maj||'');render()})
+fetch('data/hits.json?'+Date.now()).then(r=>r.json()).then(d=>{HITS=d.hits||[];$('#maj').textContent='Mise à jour le '+(d.maj||'');render();loadThumbs()})
   .catch(()=>{$('#list').innerHTML='<div class="empty">Impossible de charger la banque. Recharge la page.</div>'});
 </script>
 </body>
