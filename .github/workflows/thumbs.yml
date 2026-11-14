@@ -3,8 +3,6 @@ on:
   push:
     paths: ["data/hits.json", "scripts/thumbs.py", ".github/workflows/thumbs.yml"]
   workflow_dispatch:
-  schedule:
-    - cron: "17 5 * * *"
 permissions:
   contents: write
 concurrency: thumbs
