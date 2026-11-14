@@ -159,8 +159,7 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
     <button data-p="radar" aria-current="true"><small>01</small>Le radar<i>↗</i></button>
     <button data-p="like"><small>02</small>Ma sélection <em id="nLike">0</em><i>↗</i></button>
     <button data-p="faite"><small>03</small>Déjà faites <em id="nDone">0</em><i>↗</i></button>
-    <button data-p="non"><small>04</small>Écartées<i>↗</i></button>
-    <button data-p="compte"><small>05</small>Mon compte<i>↗</i></button>
+    <button data-p="compte"><small>04</small>Mon compte<i>↗</i></button>
   </nav>
   <div class="aside-foot">Les vidéos sont ajoutées par Claude à chaque veille.<br>Tes choix restent dans ce navigateur.</div>
 </aside>
@@ -204,11 +203,11 @@ const PAGES={
   radar:{kick:'01 / Le radar',h1:'Les hits qui cartonnent,<br><span>bientôt en fruits.</span>',lead:"Les vidéos qui ont percé sur TikTok, triées par vues. Coche celles que tu aimes : ta prochaine histoire sort de ta sélection.",h2:'Le radar',f:h=>statut(h)==='À regarder'||statut(h)==="J'aime"},
   like:{kick:'02 / Ma sélection',h1:'Tes coups de cœur,<br><span>prêts à tourner.</span>',lead:"Les vidéos que tu as cochées « J'aime ». Copie ta sélection et colle-la à Claude : il commence par la plus vue.",h2:'Ma sélection',f:h=>statut(h)==="J'aime"},
   faite:{kick:'03 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
-  compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
+  compte:{kick:'04 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
 const KEY='dramaverse-statuts-v1';
-let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,like:1,faite:1,non:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
+let HITS=[],PAGE=(location.hash.slice(1) in {radar:1,like:1,faite:1,compte:1})?location.hash.slice(1):'radar',NICHE='Toutes';
 let MINE={};try{MINE=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 const THUMBS={};
 const $=s=>document.querySelector(s);
