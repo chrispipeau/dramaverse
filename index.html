@@ -220,12 +220,12 @@ function render(){
   $('#list').innerHTML=L.length?L.map((h,i)=>{const s=statut(h),g=hue(h.id);
     const cls=s==="J'aime"?'like':(s==='Faite'||s==='Pas pour moi')&&PAGE==='radar'?'dim':'';
     const vid=(h.lien||'').match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);
-    const img=vid?`<iframe src="https://www.tiktok.com/player/v1/${vid[1]}?autoplay=0&music_info=0&description=0&rel=0&native_context_menu=0" loading="lazy" allow="fullscreen" title="${esc(h.titre)}"></iframe>`:'';
+    const img=h.img?`<img src="${esc(h.img)}" alt="" loading="lazy" onerror="this.remove()">`:'';
     return `<article class="card ${cls}">
-      <${vid?'div':'a'} class="thumb" href="${esc(h.lien||'#')}" target="_blank" rel="noopener" aria-label="Voir la vidéo ${esc(h.titre)}" style="background:linear-gradient(160deg,hsl(${g} 45% 26%),hsl(${(g+40)%360} 40% 11%))">
+      <a class="thumb" href="${esc(h.lien||'#')}" target="_blank" rel="noopener" aria-label="Voir la vidéo ${esc(h.titre)}" style="background:linear-gradient(160deg,hsl(${g} 45% 26%),hsl(${(g+40)%360} 40% 11%))">
         <div class="ph">${esc(h.titre)}</div>${img}
-        <span class="n">${String(i+1).padStart(2,'0')}</span><span class="views">${fmtV(h.vues)}</span>${vid?'':'<span class="play"></span>'}${!vid&&h.duree?`<span class="dur">${fmtD(h.duree).replace(" min ",":")}</span>`:""}${vid?"":`<span class="tag">${h.niche==="Fruits"?"🍋 FRUITS":"HORS NICHE"}</span>`}
-      </${vid?'div':'a'}>
+        <span class="n">${String(i+1).padStart(2,'0')}</span><span class="views">${fmtV(h.vues)}</span><span class="play"></span>${h.duree?`<span class="dur">${fmtD(h.duree).replace(" min ",":")}</span>`:""}<span class="tag">${h.niche==="Fruits"?"🍋 FRUITS":"HORS NICHE"}</span>
+      </a>
       <div class="body">
         <div class="who"><span>${esc(h.compte||'Source : article')}</span><span>${esc(h.date||'')}</span></div>
         <div class="t">${esc(h.titre)}</div>
