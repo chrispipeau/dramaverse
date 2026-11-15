@@ -376,7 +376,7 @@ document.addEventListener('input',e=>{
 });
 document.addEventListener('change',e=>{if(e.target.id==='sSrc'){ST_.src=e.target.value;saveS()}});
 const PKEY='dramaverse-planning-v1';let PLAN={};try{PLAN=JSON.parse(localStorage.getItem(PKEY))||{}}catch(e){}
-let WOFF=0;const JOURS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];const EMO=['😱 Choc','😂 Rire','👻 Peur','🤪 Absurde','💔 Drame','👨‍👩‍👧 Famille','⚖️ Karma'];const STEPS=['Images','Clips','Montage','Publiée'];
+let WOFF=0;const JOURS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];const EMO=['😱 Choc','😂 Rire','🥹 Émotion','🤪 Absurde','💔 Drame','👨‍👩‍👧 Famille','⚖️ Karma'];const STEPS=['Images','Clips','Montage','Publiée'];
 const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const fr=d=>String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0');
 function weekDays(){const n=new Date();n.setHours(12,0,0,0);const m=new Date(n);m.setDate(n.getDate()-((n.getDay()+6)%7)+WOFF*7);return [...Array(7)].map((_,i)=>{const d=new Date(m);d.setDate(m.getDate()+i);return d})}
