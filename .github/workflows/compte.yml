@@ -1,0 +1,21 @@
+name: Mon compte (abonnés et vidéos)
+on:
+  push:
+    paths: ["scripts/compte.py", ".github/workflows/compte.yml"]
+  workflow_dispatch:
+  schedule:
+    - cron: "7 * * * *"
+permissions:
+  contents: write
+concurrency: compte
+jobs:
+  compte:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/compte.py
+      - run: |
+          git config user.name "dramaverse-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/compte.json data/compte-log.txt
+          git diff --cached --quiet || (git commit -m "Mise à jour de mon compte" && git pull --rebase -q && git push)
