@@ -138,6 +138,7 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
 .day.today{border-color:var(--gold)}
 .day.done{border-color:var(--ok)}
 .day h4{margin:0;font:700 17px var(--f-h);display:flex;justify-content:space-between}
+.emo{font:700 13px var(--f-h);color:var(--gold);margin-top:-6px}
 .day h4 span{color:var(--muted);font:500 13px var(--f-b)}
 .day select,.day input[type=text]{width:100%;background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:9px 10px;font:14px var(--f-b);min-width:0}
 .day .lk{font-size:12.5px;color:var(--gold)}
@@ -285,7 +286,7 @@ const PAGES={
   like:{kick:'03 / Ma sélection',h1:'Tes coups de cœur,<br><span>prêts à tourner.</span>',lead:"Les vidéos que tu as cochées « J'aime ». Copie ta sélection et colle-la à Claude : il commence par la plus vue.",h2:'Ma sélection',f:h=>statut(h)==="J'aime"},
   faite:{kick:'05 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
   studio:{kick:'02 / Studio IA',h1:'Réponds à 3 questions.<br><span>Claude fait le reste.</span>',lead:'Choisis ton idée, ta durée et tes options, puis envoie le tout à Claude : il écrit l\'histoire et les prompts, tu génères les images, il gère Grok et le montage.',h2:'',f:()=>false},
-  plan:{kick:'04 / Planning',h1:'Une semaine,<br><span>sept vidéos.</span>',lead:'Pour chaque jour : la vidéo source, ton titre et où tu en es. Tout est enregistré dans ce navigateur.',h2:'',f:()=>false},
+  plan:{kick:'04 / Planning',h1:'Une semaine,<br><span>sept vidéos.</span>',lead:'Chaque jour, une émotion différente. Pour chaque jour : la vidéo source, ton titre et où tu en es.',h2:'',f:()=>false},
   compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
@@ -375,7 +376,7 @@ document.addEventListener('input',e=>{
 });
 document.addEventListener('change',e=>{if(e.target.id==='sSrc'){ST_.src=e.target.value;saveS()}});
 const PKEY='dramaverse-planning-v1';let PLAN={};try{PLAN=JSON.parse(localStorage.getItem(PKEY))||{}}catch(e){}
-let WOFF=0;const JOURS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];const STEPS=['Images','Clips','Montage','Publiée'];
+let WOFF=0;const JOURS=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];const EMO=['😱 Choc','😂 Rire','👻 Peur','🤪 Absurde','💔 Drame','👨‍👩‍👧 Famille','⚖️ Karma'];const STEPS=['Images','Clips','Montage','Publiée'];
 const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const fr=d=>String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0');
 function weekDays(){const n=new Date();n.setHours(12,0,0,0);const m=new Date(n);m.setDate(n.getDate()-((n.getDay()+6)%7)+WOFF*7);return [...Array(7)].map((_,i)=>{const d=new Date(m);d.setDate(m.getDate()+i);return d})}
@@ -386,7 +387,7 @@ function renderPlan(){
   const opts=HITS.slice().sort((a,b)=>(statut(b)==="J'aime")-(statut(a)==="J'aime")||(b.vues||0)-(a.vues||0));
   $('#days').innerHTML=D.map((d,i)=>{const k=iso(d),p=PLAN[k]||{},src=HITS.find(h=>h.id===p.src),n=STEPS.filter(s=>p[s]).length;
     return `<div class="day${k===today?' today':''}${p['Publiée']?' done':''}" data-k="${k}">
-      <h4>${JOURS[i]}<span>${fr(d)}</span></h4>
+      <h4>${JOURS[i]}<span>${fr(d)}</span></h4><div class="emo">${EMO[i]}</div>
       <select data-f="src" aria-label="Vidéo source"><option value="">— Vidéo source —</option>${opts.map(h=>`<option value="${esc(h.id)}"${h.id===p.src?' selected':''}>${statut(h)==="J'aime"?'❤ ':''}${esc(h.titre)} (${fmtV(h.vues)})</option>`).join('')}</select>
       ${src?`<a class="lk" href="${esc(src.lien)}" target="_blank" rel="noopener">Voir la source sur TikTok ↗</a>`:''}
       <input type="text" data-f="titre" placeholder="Titre de ton histoire" value="${esc(p.titre||'')}">
