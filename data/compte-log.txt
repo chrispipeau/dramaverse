@@ -1,2 +1,3 @@
-profil: {'abonnes': 689, 'jaime': 10675, 'videos': 35}
-vidéos relues: 35/35
+profil: {'abonnes': 692, 'jaime': 10719, 'videos': 34}
+7708033025677724961: erreur KeyError
+vidéos relues: 34/35
