@@ -11,9 +11,9 @@
 "compte": "@juicydrama07",
 "date": "05/10/2026",
 "duree": 99,
-"likes": 137900,
-"comms": 838,
-"partages": 996,
+"likes": 138100,
+"comms": 837,
+"partages": 997,
 "resume": "Un glacier cache un secret, d'après la légende (épisode 6 d'une série). Je n'ai pas vu la vidéo.",
 "note": "Épisode 6 d'une série.",
 "lien": "https://www.tiktok.com/@juicydrama07/video/7693160499076255008",
@@ -40,7 +40,7 @@
 "compte": "@juicydrama07",
 "date": "16/10/2026",
 "likes": 250500,
-"comms": 4062,
+"comms": 4061,
 "partages": 2243,
 "resume": "Premier épisode de la même histoire, d'après la légende. Je n'ai pas vu la vidéo.",
 "note": "Série ; durée non lue.",
@@ -68,9 +68,9 @@
 "compte": "@juicydrama07",
 "date": "21/10/2026",
 "duree": 276,
-"likes": 316200,
-"comms": 4944,
-"partages": 3507,
+"likes": 316300,
+"comms": 4947,
+"partages": 3510,
 "resume": "Histoire de fruits française autour du père de la patronne, d'après la légende. Je n'ai pas vu la vidéo.",
 "note": "Série (épisode 1 aussi dans la banque) ; version longue 4 min 36 : on garde tout, en suites si ça marche.",
 "lien": "https://www.tiktok.com/@juicydrama07/video/7699038952908541216",
@@ -155,7 +155,7 @@
 "duree": 64,
 "likes": 311400,
 "comms": 2707,
-"partages": 2572,
+"partages": 2563,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. À regarder.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7682522786648132897",
 "statut": "À regarder",
@@ -209,8 +209,8 @@
 "compte": "@quandlesalimentsparlent",
 "date": "26/09/2026",
 "duree": 75,
-"likes": 240700,
-"comms": 3284,
+"likes": 240900,
+"comms": 3288,
 "partages": 2241,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. Beaucoup de commentaires (3 279) : elle fait débattre.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7689905398433729825",
@@ -267,7 +267,7 @@
 "date": "02/05/2026",
 "duree": 77,
 "likes": 219600,
-"comms": 1765,
+"comms": 1763,
 "partages": 1147,
 "resume": "Suite de la partie 1 : la mère se déguise pour retrouver sa fille, d'après le titre. Je n'ai pas vu la vidéo.",
 "note": "Partie 2 d'une série : à faire en suite de la partie 1 si elle marche.",
@@ -330,7 +330,7 @@
 80700000
 ]
 ],
-"comms": 7828,
+"comms": 7831,
 "partages": 58100,
 "img": "thumbs/kurzdrama-fruitstory.jpg"
 },
@@ -343,7 +343,7 @@
 "fruits": 5,
 "compte": "@rondrigon",
 "date": "18/05/2026",
-"likes": 83500,
+"likes": 83700,
 "resume": "Série-novela de fruits IA, parties 1 à 4 et final réunies. D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@rondrigon/video/7641021429638630677",
 "statut": "À regarder",
@@ -355,14 +355,14 @@
 24400000
 ]
 ],
-"comms": 1797,
-"partages": 1267,
+"comms": 1796,
+"partages": 1271,
 "img": "thumbs/rondrigon-novela.jpg"
 },
 {
 "id": "happygap24-drama",
 "titre": "Drame de fruits (@happygap24)",
-"vues": 20.7,
+"vues": 21.1,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
@@ -377,11 +377,11 @@
 "hist": [
 [
 "2026-11-15",
-20700000
+21100000
 ]
 ],
-"comms": 2781,
-"partages": 33300,
+"comms": 2838,
+"partages": 34200,
 "img": "thumbs/happygap24-drama.jpg"
 },
 {
@@ -393,7 +393,7 @@
 "fruits": 5,
 "compte": "@fruitydrama113",
 "date": "03/10/2026",
-"likes": 758700,
+"likes": 758800,
 "resume": "Histoire triste de fruits IA (#sadstory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruitydrama113/video/7692517256760233238",
 "statut": "À regarder",
@@ -404,14 +404,14 @@
 17000000
 ]
 ],
-"comms": 2156,
+"comms": 2157,
 "partages": 53200,
 "img": "thumbs/fruitydrama113-magic.jpg"
 },
 {
 "id": "frutasia-trem",
 "titre": "Quel train étrange ! (@frutasiaoficial)",
-"vues": 16.4,
+"vues": 16.5,
 "niche": "Fruits",
 "humeur": "Comédie absurde",
 "fruits": 5,
@@ -425,11 +425,11 @@
 "hist": [
 [
 "2026-11-15",
-16400000
+16500000
 ]
 ],
-"comms": 9210,
-"partages": 126200,
+"comms": 9260,
+"partages": 126500,
 "img": "thumbs/frutasia-trem.jpg"
 },
 {
@@ -452,20 +452,20 @@
 14400000
 ]
 ],
-"comms": 2671,
+"comms": 2673,
 "partages": 83300,
 "img": "thumbs/reflexiones-fruitstory.jpg"
 },
 {
 "id": "lencecool-famille",
 "titre": "Drame de famille en fruits (@lencecool)",
-"vues": 13.3,
+"vues": 13.6,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
 "compte": "@lencecool",
 "date": "11/11/2026",
-"likes": 684600,
+"likes": 696200,
 "resume": "Drame familial de fruits IA (#dramadefrutas, #familydrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@lencecool/video/7706731223980330254",
 "statut": "À regarder",
@@ -474,11 +474,11 @@
 "hist": [
 [
 "2026-11-15",
-13300000
+13600000
 ]
 ],
-"comms": 2248,
-"partages": 21900,
+"comms": 2292,
+"partages": 22500,
 "img": "thumbs/lencecool-famille.jpg"
 },
 {
@@ -525,7 +525,7 @@
 27100000
 ]
 ],
-"comms": 5550,
+"comms": 5549,
 "partages": 42700,
 "img": "thumbs/diarioaurora-novela.jpg"
 },
@@ -549,7 +549,7 @@
 19900000
 ]
 ],
-"comms": 4605,
+"comms": 4604,
 "partages": 13500,
 "img": "thumbs/bananito-bouchers.jpg"
 },
@@ -573,8 +573,8 @@
 15000000
 ]
 ],
-"comms": 5995,
-"partages": 24100,
+"comms": 6007,
+"partages": 24200,
 "img": "thumbs/usaifruit-novel.jpg"
 },
 {
@@ -598,7 +598,7 @@
 13400000
 ]
 ],
-"comms": 5169,
+"comms": 5174,
 "partages": 187600,
 "img": "thumbs/laranjudo-fraise-p1.jpg"
 },
@@ -630,13 +630,13 @@
 {
 "id": "wagner-iastory",
 "titre": "Histoire IA de fruits (@wagner.beckerhe5)",
-"vues": 11.8,
+"vues": 12.2,
 "niche": "Fruits",
 "humeur": "À définir",
 "fruits": 5,
 "compte": "@wagner.beckerhe5",
 "date": "10/11/2026",
-"likes": 737800,
+"likes": 763300,
 "resume": "Histoire de fruits IA récente (#iastory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@wagner.beckerhe5/video/7706356543222025504",
 "statut": "À regarder",
@@ -645,17 +645,17 @@
 "hist": [
 [
 "2026-11-15",
-11800000
+12200000
 ]
 ],
-"comms": 1331,
-"partages": 22100,
+"comms": 1390,
+"partages": 23300,
 "img": "thumbs/wagner-iastory.jpg"
 },
 {
 "id": "frutita-secrets-p1",
 "titre": "Le goût de tes secrets — partie 1 (@frutitaenlatada)",
-"vues": 11.1,
+"vues": 11.2,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
@@ -670,10 +670,10 @@
 "hist": [
 [
 "2026-11-15",
-11100000
+11200000
 ]
 ],
-"comms": 6813,
+"comms": 6819,
 "partages": 109200,
 "img": "thumbs/frutita-secrets-p1.jpg"
 },
@@ -697,7 +697,7 @@
 12500000
 ]
 ],
-"comms": 1070,
+"comms": 1069,
 "partages": 27700,
 "img": "thumbs/aifood84-pauvrete.jpg"
 },
@@ -710,7 +710,7 @@
 "fruits": 5,
 "compte": "@.the.fruit.files",
 "date": "26/09/2026",
-"likes": 609500,
+"likes": 610800,
 "resume": "Son fils montre la fenêtre et crie « Maman ! »… elle découvre la deuxième famille secrète de son mari. D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@.the.fruit.files/video/7688421477015768333",
 "statut": "À regarder",
@@ -721,7 +721,7 @@
 11100000
 ]
 ],
-"comms": 3902,
+"comms": 3916,
 "partages": 13100,
 "img": "thumbs/fruitfiles-deuxieme-famille.jpg"
 },
@@ -734,7 +734,7 @@
 "fruits": 5,
 "compte": "@fruit_tuts",
 "date": "07/09/2026",
-"likes": 990800,
+"likes": 991000,
 "resume": "Comédie brésilienne : Boquenilce rencontre la famille de Lenivaldo, qui va-t-elle plaire ? D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruit_tuts/video/7682908330607512853",
 "statut": "À regarder",
@@ -745,7 +745,7 @@
 10200000
 ]
 ],
-"comms": 6360,
+"comms": 6362,
 "partages": 100200,
 "img": "thumbs/fruittuts-famille.jpg"
 },
@@ -758,7 +758,7 @@
 "fruits": 5,
 "compte": "@kerotiffec",
 "date": "18/10/2026",
-"likes": 661200,
+"likes": 661300,
 "resume": "Histoire de fruits IA (#aifruit). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@kerotiffec/video/7697656298795486478",
 "statut": "À regarder",
@@ -769,7 +769,7 @@
 9800000
 ]
 ],
-"comms": 3106,
+"comms": 3107,
 "partages": 21200,
 "img": "thumbs/kerotiffec-aistory.jpg"
 },
@@ -782,7 +782,7 @@
 "fruits": 5,
 "compte": "@fruitstory692",
 "date": "08/11/2026",
-"likes": 779300,
+"likes": 779400,
 "resume": "Drame de fruits IA récent (#fruitdrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruitstory692/video/7705790443505732894",
 "statut": "À regarder",
@@ -794,8 +794,8 @@
 9800000
 ]
 ],
-"comms": 2178,
-"partages": 17600,
+"comms": 2181,
+"partages": 17700,
 "img": "thumbs/fruitstory692-drama.jpg"
 },
 {
@@ -845,7 +845,7 @@
 ]
 ],
 "comms": 11500,
-"partages": 9188,
+"partages": 9189,
 "img": "thumbs/fruithistoire180-piege.jpg"
 },
 {
@@ -894,7 +894,7 @@
 8100000
 ]
 ],
-"comms": 4260,
+"comms": 4256,
 "partages": 11300,
 "img": "thumbs/seligaaqui-faux-amis-p1.jpg"
 },
@@ -944,7 +944,7 @@
 7900000
 ]
 ],
-"comms": 1495,
+"comms": 1496,
 "partages": 12700,
 "img": "thumbs/darkpulse-triste-p1.jpg"
 }
