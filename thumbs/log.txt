@@ -10,35 +10,17 @@ qlap-mere-meilleure-vie-1: chiffres à jour (5.1 M)
 qlap-mere-meilleure-vie-2: chiffres à jour (2.2 M)
 mommyyame1-p1: chiffres à jour (81.1 M)
 kurzdrama-fruitstory: chiffres à jour (80.7 M)
-mgengwy-fruitaidrama: chiffres à jour (39.7 M)
 rondrigon-novela: chiffres à jour (24.4 M)
-happygap24-drama: chiffres à jour (20.6 M)
+happygap24-drama: chiffres à jour (20.7 M)
 fruitydrama113-magic: chiffres à jour (17.0 M)
 frutasia-trem: chiffres à jour (16.4 M)
-frutasia-trem: oembed sans image
-frutasia-trem: page erreur HTTPError HTTP Error 404: Not Found
-frutasia-trem: OK via tikwm
 reflexiones-fruitstory: chiffres à jour (14.4 M)
 lencecool-famille: chiffres à jour (13.3 M)
 storiestale2-emotion: chiffres à jour (12.3 M)
 diarioaurora-novela: chiffres à jour (27.1 M)
-diarioaurora-novela: oembed sans image
-diarioaurora-novela: OK via page
 bananito-bouchers: chiffres à jour (19.9 M)
-bananito-bouchers: oembed sans image
-bananito-bouchers: OK via page
 usaifruit-novel: chiffres à jour (15.0 M)
-usaifruit-novel: oembed sans image
-usaifruit-novel: OK via page
 laranjudo-fraise-p1: chiffres à jour (13.4 M)
-laranjudo-fraise-p1: oembed sans image
-laranjudo-fraise-p1: OK via page
 willowrae-famille-ep1: chiffres à jour (12.7 M)
-willowrae-famille-ep1: oembed sans image
-willowrae-famille-ep1: OK via page
-wagner-iastory: chiffres à jour (11.7 M)
-wagner-iastory: oembed sans image
-wagner-iastory: OK via page
+wagner-iastory: chiffres à jour (11.8 M)
 frutita-secrets-p1: chiffres à jour (11.1 M)
-frutita-secrets-p1: oembed sans image
-frutita-secrets-p1: OK via page

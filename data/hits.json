@@ -11,8 +11,8 @@
 "compte": "@juicydrama07",
 "date": "05/10/2026",
 "duree": 99,
-"likes": 137800,
-"comms": 835,
+"likes": 137900,
+"comms": 836,
 "partages": 996,
 "resume": "Un glacier cache un secret, d'après la légende (épisode 6 d'une série). Je n'ai pas vu la vidéo.",
 "note": "Épisode 6 d'une série.",
@@ -181,7 +181,7 @@
 "compte": "@quandlesalimentsparlent",
 "date": "18/09/2026",
 "duree": 66,
-"likes": 162200,
+"likes": 162300,
 "comms": 448,
 "partages": 1748,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. À regarder.",
@@ -209,7 +209,7 @@
 "compte": "@quandlesalimentsparlent",
 "date": "26/09/2026",
 "duree": 75,
-"likes": 240600,
+"likes": 240700,
 "comms": 3286,
 "partages": 2241,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. Beaucoup de commentaires (3 279) : elle fait débattre.",
@@ -356,13 +356,13 @@
 ]
 ],
 "comms": 1795,
-"partages": 1266,
+"partages": 1267,
 "img": "thumbs/rondrigon-novela.jpg"
 },
 {
 "id": "happygap24-drama",
 "titre": "Drame de fruits (@happygap24)",
-"vues": 20.6,
+"vues": 20.7,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
@@ -377,10 +377,10 @@
 "hist": [
 [
 "2026-11-15",
-20600000
+20700000
 ]
 ],
-"comms": 2763,
+"comms": 2769,
 "partages": 33100,
 "img": "thumbs/happygap24-drama.jpg"
 },
@@ -428,7 +428,7 @@
 16400000
 ]
 ],
-"comms": 9202,
+"comms": 9207,
 "partages": 126100,
 "img": "thumbs/frutasia-trem.jpg"
 },
@@ -465,7 +465,7 @@
 "fruits": 5,
 "compte": "@lencecool",
 "date": "11/11/2026",
-"likes": 682100,
+"likes": 683200,
 "resume": "Drame familial de fruits IA (#dramadefrutas, #familydrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@lencecool/video/7706731223980330254",
 "statut": "À regarder",
@@ -477,7 +477,7 @@
 13300000
 ]
 ],
-"comms": 2239,
+"comms": 2242,
 "partages": 21800,
 "img": "thumbs/lencecool-famille.jpg"
 },
@@ -630,13 +630,13 @@
 {
 "id": "wagner-iastory",
 "titre": "Histoire IA de fruits (@wagner.beckerhe5)",
-"vues": 11.7,
+"vues": 11.8,
 "niche": "Fruits",
 "humeur": "À définir",
 "fruits": 5,
 "compte": "@wagner.beckerhe5",
 "date": "10/11/2026",
-"likes": 732700,
+"likes": 735000,
 "resume": "Histoire de fruits IA récente (#iastory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@wagner.beckerhe5/video/7706356543222025504",
 "statut": "À regarder",
@@ -645,11 +645,11 @@
 "hist": [
 [
 "2026-11-15",
-11700000
+11800000
 ]
 ],
-"comms": 1321,
-"partages": 21900,
+"comms": 1327,
+"partages": 22100,
 "img": "thumbs/wagner-iastory.jpg"
 },
 {
