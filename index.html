@@ -215,6 +215,7 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
       <option value="vues">Les plus vues</option>
       <option value="hot">🔥 Ça décolle (vues/jour)</option>
       <option value="vh">Plus de vues par heure</option>
+      <option value="eng">Meilleur engagement</option>
       <option value="fruits">Les plus faciles en fruits</option>
       <option value="titre">Ordre alphabétique</option>
     </select>
@@ -320,8 +321,10 @@ const THEMES={
   '5 M+':h=>h.vues>=5,
   'Récentes (3 mois)':h=>ageJ(h)<=92,
   'Faciles en fruits':h=>(h.fruits||0)>=4,
+  'Engagement 8 %+':h=>(engf(h)||0)>=0.08,
   '🔥 Ça décolle':h=>HOT.has(h.id)
 };
+const engf=h=>h.likes!=null&&h.vues?((h.likes||0)+(h.comms||0)+(h.partages||0))/(h.vues*1e6):null;
 const statut=h=>MINE[h.id]||h.statut||'À regarder';
 const hue=id=>[...id].reduce((a,c)=>(a*31+c.charCodeAt(0))%360,7);
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2000)}
@@ -432,7 +435,7 @@ function render(){
   hs.innerHTML=['Toutes',...[...new Set(H.map(h=>h.humeur).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'))].map(v=>`<option value="${esc(v)}"${v===cur?' selected':''}>${v==='Toutes'?'Toutes les humeurs':esc(v)}</option>`).join('');
   const q=$('#q').value.trim().toLowerCase(),so=$('#sort').value,hu=hs.value;
   let L=H.filter(h=>P.f(h)&&THEMES[NICHE||'Toutes'](h)&&(hu==='Toutes'||h.humeur===hu)&&(!q||[h.titre,h.resume,h.compte,h.humeur,h.note].join(' ').toLowerCase().includes(q)));
-  L.sort(so==='hot'?(a,b)=>(gain(b)??-1)-(gain(a)??-1):so==='vh'?(a,b)=>(vph(b)??-1)-(vph(a)??-1):so==='titre'?(a,b)=>a.titre.localeCompare(b.titre,'fr'):so==='fruits'?(a,b)=>(b.fruits||0)-(a.fruits||0)||(b.vues||0)-(a.vues||0):(a,b)=>(b.vues||0)-(a.vues||0));
+  L.sort(so==='eng'?(a,b)=>(engf(b)??-1)-(engf(a)??-1):so==='hot'?(a,b)=>(gain(b)??-1)-(gain(a)??-1):so==='vh'?(a,b)=>(vph(b)??-1)-(vph(a)??-1):so==='titre'?(a,b)=>a.titre.localeCompare(b.titre,'fr'):so==='fruits'?(a,b)=>(b.fruits||0)-(a.fruits||0)||(b.vues||0)-(a.vues||0):(a,b)=>(b.vues||0)-(a.vues||0));
   $('#count').textContent=`${L.length} affichée${L.length>1?'s':''} · ${H.length} en stock`;
   $('#list').innerHTML=L.length?L.map((h,i)=>{const s=statut(h),g=hue(h.id);
     const cls=s==="J'aime"?'like':(s==='Faite'||s==='Pas pour moi')&&PAGE==='radar'?'dim':'';
