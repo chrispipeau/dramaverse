@@ -12,7 +12,7 @@
 "date": "05/10/2026",
 "duree": 99,
 "likes": 137800,
-"comms": 835,
+"comms": 836,
 "partages": 996,
 "resume": "Un glacier cache un secret, d'après la légende (épisode 6 d'une série). Je n'ai pas vu la vidéo.",
 "note": "Épisode 6 d'une série.",
@@ -40,7 +40,7 @@
 "compte": "@juicydrama07",
 "date": "16/10/2026",
 "likes": 250500,
-"comms": 4061,
+"comms": 4062,
 "partages": 2243,
 "resume": "Premier épisode de la même histoire, d'après la légende. Je n'ai pas vu la vidéo.",
 "note": "Série ; durée non lue.",
@@ -154,8 +154,8 @@
 "date": "07/09/2026",
 "duree": 64,
 "likes": 311400,
-"comms": 2706,
-"partages": 2563,
+"comms": 2707,
+"partages": 2572,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. À regarder.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7682522786648132897",
 "statut": "À regarder",
@@ -210,7 +210,7 @@
 "date": "26/09/2026",
 "duree": 75,
 "likes": 240600,
-"comms": 3285,
+"comms": 3283,
 "partages": 2240,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. Beaucoup de commentaires (3 279) : elle fait débattre.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7689905398433729825",
@@ -267,7 +267,7 @@
 "date": "02/05/2026",
 "duree": 77,
 "likes": 219600,
-"comms": 1763,
+"comms": 1765,
 "partages": 1147,
 "resume": "Suite de la partie 1 : la mère se déguise pour retrouver sa fille, d'après le titre. Je n'ai pas vu la vidéo.",
 "note": "Partie 2 d'une série : à faire en suite de la partie 1 si elle marche.",
@@ -299,7 +299,16 @@
 "lien": "https://www.tiktok.com/@mommyyame1/video/7649489303176809741",
 "statut": "À regarder",
 "source": "TrendStudio, 15/11/2026",
-"note": "Série : on fait la partie 1 en entier, la suite si ça marche."
+"note": "Série : on fait la partie 1 en entier, la suite si ça marche.",
+"hist": [
+[
+"2026-11-15",
+81100000
+]
+],
+"comms": 14800,
+"partages": 346500,
+"img": "thumbs/mommyyame1-p1.jpg"
 },
 {
 "id": "kurzdrama-fruitstory",
@@ -314,7 +323,16 @@
 "resume": "Histoire de fruits IA animée (#aistory, #fruitstory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@kurzdrama_/video/7617775628317691158",
 "statut": "À regarder",
-"source": "TrendStudio, 15/11/2026"
+"source": "TrendStudio, 15/11/2026",
+"hist": [
+[
+"2026-11-15",
+80700000
+]
+],
+"comms": 7829,
+"partages": 58100,
+"img": "thumbs/kurzdrama-fruitstory.jpg"
 },
 {
 "id": "mgengwy-fruitaidrama",
@@ -330,7 +348,16 @@
 "lien": "https://www.tiktok.com/@mgengwy/video/7692444951853960479",
 "statut": "À regarder",
 "source": "TrendStudio, 15/11/2026",
-"note": "39 K vues/heure : elle décolle encore."
+"note": "39 K vues/heure : elle décolle encore.",
+"hist": [
+[
+"2026-11-15",
+39700000
+]
+],
+"comms": 19600,
+"partages": 34900,
+"img": "thumbs/mgengwy-fruitaidrama.jpg"
 },
 {
 "id": "rondrigon-novela",
@@ -341,12 +368,21 @@
 "fruits": 5,
 "compte": "@rondrigon",
 "date": "18/05/2026",
-"likes": 83400,
+"likes": 83500,
 "resume": "Série-novela de fruits IA, parties 1 à 4 et final réunies. D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@rondrigon/video/7641021429638630677",
 "statut": "À regarder",
 "source": "TrendStudio, 15/11/2026",
-"note": "Peu de likes pour les vues (83 K) : à regarder avant de choisir."
+"note": "Peu de likes pour les vues (83 K) : à regarder avant de choisir.",
+"hist": [
+[
+"2026-11-15",
+24400000
+]
+],
+"comms": 1797,
+"partages": 1266,
+"img": "thumbs/rondrigon-novela.jpg"
 },
 {
 "id": "happygap24-drama",
@@ -362,7 +398,16 @@
 "lien": "https://www.tiktok.com/@happygap24/video/7707098993968418078",
 "statut": "À regarder",
 "source": "TrendStudio, 15/11/2026",
-"note": "🔥 Postée il y a 3 jours, 292 K vues/heure : la plus chaude du moment."
+"note": "🔥 Postée il y a 3 jours, 292 K vues/heure : la plus chaude du moment.",
+"hist": [
+[
+"2026-11-15",
+20600000
+]
+],
+"comms": 2760,
+"partages": 33000,
+"img": "thumbs/happygap24-drama.jpg"
 },
 {
 "id": "fruitydrama113-magic",
@@ -377,7 +422,16 @@
 "resume": "Histoire triste de fruits IA (#sadstory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruitydrama113/video/7692517256760233238",
 "statut": "À regarder",
-"source": "TrendStudio, 15/11/2026"
+"source": "TrendStudio, 15/11/2026",
+"hist": [
+[
+"2026-11-15",
+17000000
+]
+],
+"comms": 2156,
+"partages": 53200,
+"img": "thumbs/fruitydrama113-magic.jpg"
 },
 {
 "id": "frutasia-trem",
@@ -392,7 +446,15 @@
 "resume": "Comédie de fruits IA brésilienne (« Que trem estranho é esse? »). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@frutasiaoficial/video/7698864248516037896",
 "statut": "À regarder",
-"source": "TrendStudio, 15/11/2026"
+"source": "TrendStudio, 15/11/2026",
+"hist": [
+[
+"2026-11-15",
+16400000
+]
+],
+"comms": 9202,
+"partages": 126100
 },
 {
 "id": "reflexiones-fruitstory",
@@ -407,7 +469,16 @@
 "resume": "Histoire de fruits IA animée (#fruitstory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@sr_reflexionesburroides/video/7627525803844128022",
 "statut": "À regarder",
-"source": "TrendStudio, 15/11/2026"
+"source": "TrendStudio, 15/11/2026",
+"hist": [
+[
+"2026-11-15",
+14400000
+]
+],
+"comms": 2671,
+"partages": 83300,
+"img": "thumbs/reflexiones-fruitstory.jpg"
 },
 {
 "id": "lencecool-famille",
@@ -418,12 +489,21 @@
 "fruits": 5,
 "compte": "@lencecool",
 "date": "11/11/2026",
-"likes": 681800,
+"likes": 681900,
 "resume": "Drame familial de fruits IA (#dramadefrutas, #familydrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@lencecool/video/7706731223980330254",
 "statut": "À regarder",
 "source": "TrendStudio, 15/11/2026",
-"note": "🔥 Postée il y a 4 jours, 140 K vues/heure."
+"note": "🔥 Postée il y a 4 jours, 140 K vues/heure.",
+"hist": [
+[
+"2026-11-15",
+13300000
+]
+],
+"comms": 2239,
+"partages": 21700,
+"img": "thumbs/lencecool-famille.jpg"
 },
 {
 "id": "storiestale2-emotion",
@@ -438,7 +518,16 @@
 "resume": "Histoire émouvante de fruits IA (#emotionalvideo, #aistory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@storiestale2/video/7668737200732851486",
 "statut": "À regarder",
-"source": "TrendStudio, 15/11/2026"
+"source": "TrendStudio, 15/11/2026",
+"hist": [
+[
+"2026-11-15",
+12300000
+]
+],
+"comms": 2208,
+"partages": 9492,
+"img": "thumbs/storiestale2-emotion.jpg"
 }
 ]
 }
