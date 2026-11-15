@@ -335,31 +335,6 @@
 "img": "thumbs/kurzdrama-fruitstory.jpg"
 },
 {
-"id": "mgengwy-fruitaidrama",
-"titre": "Fruit AI drama (@mgengwy)",
-"vues": 39.7,
-"niche": "Fruits",
-"humeur": "Drame",
-"fruits": 5,
-"compte": "@mgengwy",
-"date": "03/10/2026",
-"likes": 1700000,
-"resume": "Drame de fruits IA (#fruitaidrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
-"lien": "https://www.tiktok.com/@mgengwy/video/7692444951853960479",
-"statut": "À regarder",
-"source": "TrendStudio, 15/11/2026",
-"note": "39 K vues/heure : elle décolle encore.",
-"hist": [
-[
-"2026-11-15",
-39700000
-]
-],
-"comms": 19600,
-"partages": 34900,
-"img": "thumbs/mgengwy-fruitaidrama.jpg"
-},
-{
 "id": "rondrigon-novela",
 "titre": "Novela de frutas (@rondrigon)",
 "vues": 24.4,
@@ -702,5 +677,12 @@
 "partages": 109200,
 "img": "thumbs/frutita-secrets-p1.jpg"
 }
+],
+"deja_faites": [
+"@mgengwy (SA NOTE EST INTERDITE)",
+"@stereotype2d77 / @estereotiposmx (Mi hermana → Ma pire sœur)",
+"@7vizory7 (FAUX VISAGE)",
+"@fruittwist.tv (300 000 € DANS UN COFFRE)",
+"@fasteditx1 (bébé du meilleur ami)"
 ]
 }
