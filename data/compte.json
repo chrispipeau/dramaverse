@@ -1,8 +1,305 @@
 {
 "comptes": [
-  {"compte": "@dramaaverse", "releves": [
-    {"date": "14/11/2026", "abonnes": 651, "jaime": 10100, "videos": 35, "source": "TrendStudio"}
-  ]}
+{
+"compte": "@dramaaverse",
+"releves": [
+{
+"date": "14/11/2026",
+"abonnes": 651,
+"jaime": 10100,
+"videos": 35,
+"source": "TrendStudio"
+},
+{
+"date": "15/11/2026",
+"abonnes": 662,
+"jaime": 10328,
+"videos": 35,
+"source": "TikTok"
+}
+]
+}
 ],
-"videos": []
+"videos": [
+{
+"titre": "Partie 2 | Elle est sortie défendre sa mère… seule",
+"vues": 1356,
+"likes": 51,
+"comms": 1,
+"date": "14 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 1 : Elle la déteste à la maison… mais touche à sa sœur",
+"vues": 1125,
+"likes": 35,
+"comms": 1,
+"date": "13 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 2 | Elle a enfin cherché sa fille… mais c'était trop tard",
+"vues": 8902,
+"likes": 373,
+"comms": 4,
+"date": "7 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle a volé la jeunesse de sa fille… puis son mari",
+"vues": 1837,
+"likes": 59,
+"comms": 1,
+"date": "5 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Ils ont tous couru après le dernier chargeur du monde",
+"vues": 1463,
+"likes": 35,
+"comms": 0,
+"date": "4 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 1 | Personne ne la regardait… alors elle a disparu",
+"vues": 35000,
+"likes": 1039,
+"comms": 15,
+"date": "3 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il a caché son vrai visage pour leur argent",
+"vues": 1170,
+"likes": 42,
+"comms": 2,
+"date": "2 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle a piqué le mari de sa fille",
+"vues": 987,
+"likes": 30,
+"comms": 1,
+"date": "1 nov.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle a donné un rein à son mari",
+"vues": 1739,
+"likes": 60,
+"comms": 1,
+"date": "31 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Sa meilleure amie a acheté SA robe de mariée",
+"vues": 1772,
+"likes": 46,
+"comms": 0,
+"date": "30 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle souffle les bougies de sa nièce pour annoncer son mariage",
+"vues": 4191,
+"likes": 122,
+"comms": 0,
+"date": "29 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il pensait que la fourrière ne viendrait jamais",
+"vues": 2024,
+"likes": 38,
+"comms": 3,
+"date": "28 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 2 : le prénom (Test ADN)",
+"vues": 17000,
+"likes": 774,
+"comms": 9,
+"date": "27 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle a fait passer une peluche pour son bébé",
+"vues": 2945,
+"likes": 88,
+"comms": 1,
+"date": "26 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Kévin sort après 5 ans de prison",
+"vues": 3224,
+"likes": 85,
+"comms": 1,
+"date": "25 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle a choisi le prénom de SON bébé à sa place (Gérard)",
+"vues": 118000,
+"likes": 3809,
+"comms": 15,
+"date": "24 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il l'a défendue… elle en a profité (Pas ta bonne)",
+"vues": 9062,
+"likes": 299,
+"comms": 6,
+"date": "22 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Chef d'équipe, manager, directeur… (Promu)",
+"vues": 1074,
+"likes": 41,
+"comms": 1,
+"date": "21 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il s'est dénoncé tout seul… Coupable ou pas ?",
+"vues": 10000,
+"likes": 168,
+"comms": 0,
+"date": "20 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Ta tante insulte ta femme devant ta porte",
+"vues": 36000,
+"likes": 1028,
+"comms": 21,
+"date": "19 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Ils allaient mourir, alors ils se sont tout avoué",
+"vues": 1532,
+"likes": 59,
+"comms": 0,
+"date": "18 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle l'a jeté à la mer… et c'est lui qu'on accuse",
+"vues": 2301,
+"likes": 51,
+"comms": 2,
+"date": "17 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il aurait dû payer dès le début, ou elle a abusé ?",
+"vues": 2201,
+"likes": 80,
+"comms": 3,
+"date": "16 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "À 3 h 33, ton propre numéro t'envoie un vocal",
+"vues": 2425,
+"likes": 80,
+"comms": 3,
+"date": "15 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Sécher l'anniv de belle-maman (Faux malade)",
+"vues": 35000,
+"likes": 951,
+"comms": 7,
+"date": "14 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Tout ça pour une balle qui était dehors",
+"vues": 716,
+"likes": 35,
+"comms": 0,
+"date": "13 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il like la photo de son ex à 3 h 12",
+"vues": 712,
+"likes": 46,
+"comms": 0,
+"date": "12 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Sois honnête : t'aurais payé combien pour le tien ? (La rançon)",
+"vues": 16000,
+"likes": 433,
+"comms": 11,
+"date": "11 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Elle a tout perdu en une soirée (Fruidgerton)",
+"vues": 416,
+"likes": 27,
+"comms": 1,
+"date": "10 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "FINALE · La serveuse humiliée (Fruidgerton)",
+"vues": 2324,
+"likes": 48,
+"comms": 0,
+"date": "10 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 5 · Le bracelet l'a trahie (Fruidgerton)",
+"vues": 713,
+"likes": 52,
+"comms": 1,
+"date": "9 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 4 · Il y a cinq ans, elle a tout filmé (Fruidgerton)",
+"vues": 2566,
+"likes": 49,
+"comms": 1,
+"date": "6 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Partie 3 · Elle croyait connaître la vérité (Fruidgerton)",
+"vues": 917,
+"likes": 27,
+"comms": 1,
+"date": "4 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il l'a humiliée. Maintenant, elle est sa patronne (Fruidgerton)",
+"vues": 7203,
+"likes": 129,
+"comms": 0,
+"date": "3 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+},
+{
+"titre": "Il lui a dit qu'elle n'était personne (Fruidgerton)",
+"vues": 1079,
+"likes": 39,
+"comms": 3,
+"date": "2 oct.",
+"lien": "https://www.tiktok.com/@dramaaverse"
+}
+]
 }

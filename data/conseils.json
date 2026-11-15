@@ -1,41 +1,56 @@
 {
-"maj": "15/11/2026",
-"resume": "Ce qui marche le mieux chez toi : les comédies absurdes qui choquent dès la 1re seconde (« GÉRARD ?! », « Ils ont pris le mauvais mari »). Les drames purs et tristes marchent moins. Ton public : surtout des femmes de 18-34 ans qui te découvrent dans le « Pour toi ».",
-"sections": [
- {"titre":"👀 Plus de vues","conseils":[
-  "Le choc dans la 1re seconde : un fait qui fait tomber la mâchoire, pas une mise en place.",
-  "Un rebondissement avant 8 s, un deuxième vers 15 s : c'est là que les gens décrochent.",
-  "Partir de sources de fruits à 10 M+ ET plus de 5 % d'engagement : la recette a déjà fait ses preuves.",
-  "Une émotion différente chaque jour (choc, rire, émotion, absurde, drame, famille, karma) pour toucher plus de monde.",
-  "Poster tous les jours à la même heure (18 h) : TikTok pousse les comptes réguliers.",
-  "Couverture façon affiche de film avec un titre court qui contient le choc."
- ]},
- {"titre":"❤️ Plus de likes","conseils":[
-  "Une fin qui surprend ou une injustice : les gens likent ce qui leur fait ressentir quelque chose.",
-  "Aucun temps mort : répliques qui s'enchaînent, réponses immédiates, mouvement pendant les dialogues.",
-  "Une durée juste au-dessus de 1 min 02 : assez long pour la monétisation, assez court pour qu'on aille au bout.",
-  "Des répliques cash et des phrases cultes que les gens ont envie de répéter."
- ]},
- {"titre":"💬 Plus de commentaires et de partages","conseils":[
-  "Une fin qui divise : « Qui a raison ? », « Vous auriez fait quoi ? » dans la bio (jamais de « team X ou team Y »).",
-  "Les ambiguïtés choquantes font commenter (on ne sait pas si c'est sa mère ou sa copine…).",
-  "Répondre aux premiers commentaires dans l'heure : TikTok voit que la vidéo vit.",
-  "Épingler un commentaire qui pose une question ou relance le débat.",
-  "Une situation que les gens envoient à leurs amis (« c'est toi ça »)."
- ]},
- {"titre":"➕ Plus de followers","conseils":[
-  "Une suite seulement quand les commentaires la réclament, publiée en réponse vidéo au commentaire.",
-  "Garder des personnages reconnaissables (même fruit, même look) pour qu'on ait envie de les revoir.",
-  "De temps en temps, un clin d'œil à ton compte dans l'histoire.",
-  "Une story chaque jour : teaser de la vidéo du soir + sondage, pour faire revenir ceux qui t'ont déjà vu.",
-  "Une bio de compte claire : ce qu'on va voir chez toi et à quelle fréquence."
- ]},
- {"titre":"🚫 À éviter","conseils":[
-  "Les drames uniquement tristes, sans choc ni retournement.",
-  "Les histoires trop proches de celles déjà faites (bébé d'un autre, belle-mère, mariage…).",
-  "Les vidéos à 1 min 30 et plus : elles ont moins bien marché chez toi.",
-  "Les sources aux likes anormalement bas (moins de 2 % des vues).",
-  "Booster une vidéo avant qu'elle ait 15 s de visionnage moyen et 8 % de vues complètes."
- ]}
-]
+ "maj": "15/11/2026",
+ "resume": "Ce qui marche le mieux chez toi : les comédies absurdes qui choquent dès la 1re seconde (« GÉRARD ?! » 118 K vues, « Ta tante insulte ta femme » 36 K, « Personne la regarde » 35 K, « Faux malade » 35 K). Les drames tristes et les séries Fruidgerton marchent beaucoup moins (souvent sous 2 K vues). Point faible : ton engagement tourne autour de 3 % (likes + commentaires ÷ vues), alors que les hits de fruits sont à 5-10 % — il faut des fins qui font réagir et des questions qui font commenter. Ton public : surtout des femmes de 18-34 ans qui te découvrent dans le « Pour toi ».",
+ "sections": [
+  {
+   "titre": "👀 Plus de vues",
+   "conseils": [
+    "Le choc dans la 1re seconde : un fait qui fait tomber la mâchoire, pas une mise en place.",
+    "Un rebondissement avant 8 s, un deuxième vers 15 s : c'est là que les gens décrochent.",
+    "Partir de sources de fruits à 10 M+ ET plus de 5 % d'engagement : la recette a déjà fait ses preuves.",
+    "Une émotion différente chaque jour (choc, rire, émotion, absurde, drame, famille, karma) pour toucher plus de monde.",
+    "Poster tous les jours à la même heure (18 h) : TikTok pousse les comptes réguliers.",
+    "Couverture façon affiche de film avec un titre court qui contient le choc."
+   ]
+  },
+  {
+   "titre": "❤️ Plus de likes",
+   "conseils": [
+    "Une fin qui surprend ou une injustice : les gens likent ce qui leur fait ressentir quelque chose.",
+    "Aucun temps mort : répliques qui s'enchaînent, réponses immédiates, mouvement pendant les dialogues.",
+    "Une durée juste au-dessus de 1 min 02 : assez long pour la monétisation, assez court pour qu'on aille au bout.",
+    "Des répliques cash et des phrases cultes que les gens ont envie de répéter."
+   ]
+  },
+  {
+   "titre": "💬 Plus de commentaires et de partages",
+   "conseils": [
+    "Une fin qui divise : « Qui a raison ? », « Vous auriez fait quoi ? » dans la bio (jamais de « team X ou team Y »).",
+    "Les ambiguïtés choquantes font commenter (on ne sait pas si c'est sa mère ou sa copine…).",
+    "Répondre aux premiers commentaires dans l'heure : TikTok voit que la vidéo vit.",
+    "Épingler un commentaire qui pose une question ou relance le débat.",
+    "Une situation que les gens envoient à leurs amis (« c'est toi ça »)."
+   ]
+  },
+  {
+   "titre": "➕ Plus de followers",
+   "conseils": [
+    "Une suite seulement quand les commentaires la réclament, publiée en réponse vidéo au commentaire.",
+    "Garder des personnages reconnaissables (même fruit, même look) pour qu'on ait envie de les revoir.",
+    "De temps en temps, un clin d'œil à ton compte dans l'histoire.",
+    "Une story chaque jour : teaser de la vidéo du soir + sondage, pour faire revenir ceux qui t'ont déjà vu.",
+    "Une bio de compte claire : ce qu'on va voir chez toi et à quelle fréquence."
+   ]
+  },
+  {
+   "titre": "🚫 À éviter",
+   "conseils": [
+    "Les drames uniquement tristes, sans choc ni retournement.",
+    "Les histoires trop proches de celles déjà faites (bébé d'un autre, belle-mère, mariage…).",
+    "Les vidéos à 1 min 30 et plus : elles ont moins bien marché chez toi.",
+    "Les sources aux likes anormalement bas (moins de 2 % des vues).",
+    "Booster une vidéo avant qu'elle ait 15 s de visionnage moyen et 8 % de vues complètes."
+   ]
+  }
+ ]
 }
