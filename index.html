@@ -159,6 +159,9 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
 .pipe b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);flex:none}
 .pipe span{display:flex;flex-direction:column;font-size:13px;color:var(--muted)}.pipe strong{color:var(--fg);font-size:15px}
 .go{background:var(--gold2);color:#191612;border:0;border-radius:12px;padding:14px 22px;font:700 15px var(--f-b)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin-bottom:20px}
+.cgrid .ccard{margin:0}.cgrid ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.5}
+.cgrid li::marker{color:var(--gold)}
 /* Téléphone */
 @media (max-width:860px){
   .burger{display:block}
@@ -276,6 +279,11 @@ td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:15px}
     <div class="ccard"><h3>Évolution des abonnés</h3><div id="chart"></div><p class="cnote" id="cnote"></p></div>
     <div class="ccard" id="cvids"></div>
   </section>
+  <section id="conseilsView" hidden>
+    <div class="ccard"><h3>📈 Analyse & conseils</h3><p id="cResume" style="margin:0;font-size:16px;line-height:1.6"></p><p class="cnote" id="cMaj"></p></div>
+    <div class="cgrid" id="cSections"></div>
+    <div class="ccard"><h3>📊 Ta banque en chiffres</h3><div class="tiles" id="cBank" style="margin:0"></div></div>
+  </section>
 </main>
 </div>
 <div class="toast" id="toast" hidden></div>
@@ -288,7 +296,8 @@ const PAGES={
   faite:{kick:'05 / Déjà faites',h1:'Ce qui est déjà<br><span>passé en fruits.</span>',lead:'Les vidéos dont tu as déjà fait ta version.',h2:'Déjà faites',f:h=>statut(h)==='Faite'},
   studio:{kick:'02 / Studio IA',h1:'Réponds à 3 questions.<br><span>Claude fait le reste.</span>',lead:'Choisis ton idée, ta durée et tes options, puis envoie le tout à Claude : il écrit l\'histoire et les prompts, tu génères les images, il gère Grok et le montage.',h2:'',f:()=>false},
   plan:{kick:'04 / Planning',h1:'Une semaine,<br><span>sept vidéos.</span>',lead:'Chaque jour, une émotion différente. Pour chaque jour : la vidéo source, ton titre et où tu en es.',h2:'',f:()=>false},
-  compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres. Une trace de chaque progression.',h2:'',f:()=>false},
+  conseils:{kick:'06 / Analyse',h1:'Plus de vues,<br><span>plus de fans.</span>',lead:'Mes conseils tirés de tes vidéos et des hits de fruits. Mis à jour chaque semaine.',h2:'',f:()=>false},
+  compte:{kick:'05 / Croissance',h1:'Du premier pas<br><span>à la prochaine étape.</span>',lead:'Ton compte, tes chiffres, et mes conseils pour avoir plus de vues, de likes et de followers.',h2:'',f:()=>false},
   non:{kick:'04 / Écartées',h1:'Pas pour toi,<br><span>mais gardées au cas où.</span>',lead:'Les vidéos que tu as écartées. Tu peux toujours changer d\'avis.',h2:'Écartées',f:h=>statut(h)==='Pas pour moi'}
 };
 const KEY='dramaverse-statuts-v1';
@@ -329,7 +338,15 @@ const statut=h=>MINE[h.id]||h.statut||'À regarder';
 const hue=id=>[...id].reduce((a,c)=>(a*31+c.charCodeAt(0))%360,7);
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2000)}
 
-let COMPTE=null;
+let COMPTE=null,CONSEILS=null;
+function renderConseils(){
+  if(!CONSEILS){$('#cResume').textContent='Chargement…';return}
+  $('#cResume').textContent=CONSEILS.resume;$('#cMaj').textContent='Mis à jour le '+CONSEILS.maj;
+  $('#cSections').innerHTML=CONSEILS.sections.map(x=>`<div class="ccard"><h3>${esc(x.titre)}</h3><ul>${x.conseils.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`).join('');
+  const H=HITS,eg=H.map(engf).filter(x=>x!=null),avgE=eg.length?eg.reduce((a,b)=>a+b,0)/eg.length:0;
+  const cnt=k=>H.filter(h=>THEMES[k](h)).length;const best=H.slice().sort((a,b)=>(engf(b)||0)-(engf(a)||0))[0];
+  $('#cBank').innerHTML=`<div class="tile"><b>${H.length}</b><span>vidéos de fruits</span></div><div class="tile"><b>${(Math.round(avgE*1000)/10).toString().replace('.',',')} %</b><span>engagement moyen</span></div><div class="tile"><b>${cnt('Comédie')}</b><span>comédies</span></div><div class="tile"><b>${cnt('Drame')}</b><span>drames</span></div>${best?`<div class="tile"><b>${(Math.round(engf(best)*1000)/10).toString().replace('.',',')} %</b><span>la plus engageante : ${esc(best.titre)}</span></div>`:''}`;
+}
 const SKEY='dramaverse-studio-v1';
 const AMEL=['Accroche plus forte','Rythme plus nerveux','Dialogue plus naturel','Chute plus surprenante','Enjeu plus clair','Plus d\'émotion','Plus de comédie physique','Meilleure boucle'];
 const CONS_DEF=`Langue : dialogues 100 % en français familier, cash, comme la téléréalité. Répliques courtes, rapport de force, clash du tac au tac.
@@ -421,10 +438,11 @@ function renderCompte(){
 }
 function render(){
   const H=HITS,P=PAGES[PAGE];
-  const isC=PAGE==='compte',isP=PAGE==='plan',isS=PAGE==='studio';show('#compteView',isC);show('#planView',isP);show('#studioView',isS);show('.search,.bar:not(#studioView .bar),.tiles,.head2,#count,#list',!isC&&!isP&&!isS);
+  const isC=PAGE==='compte',isP=PAGE==='plan',isS=PAGE==='studio',isA=false;show('#compteView',isC);show('#planView',isP);show('#studioView',isS);show('#conseilsView',isC);show('.search,.bar:not(#studioView .bar),main > .tiles,.head2,#count,#list',!isC&&!isP&&!isS&&!isA);
+  if(isA){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderConseils();return}
   if(isS){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderStudio();return}
   if(isP){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderPlan();return}
-  if(isC){$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderCompte();return}
+  if(isC){renderConseils();$('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));renderCompte();return}
   $('#kick').textContent=P.kick;$('#h1').innerHTML=P.h1;$('#lead').textContent=P.lead;$('#h2').textContent=P.h2;
   document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.p===PAGE));
   const n=s=>H.filter(h=>statut(h)===s).length;
@@ -490,6 +508,7 @@ $('#q').addEventListener('input',render);
 $('#sort').addEventListener('change',render);
 $('#humeur').addEventListener('change',render);
 
+fetch('data/conseils.json?'+Date.now()).then(r=>r.json()).then(d=>{CONSEILS=d;if(PAGE==='compte')render()}).catch(()=>{});
 fetch('data/compte.json?'+Date.now()).then(r=>r.json()).then(d=>{COMPTE=d;if(PAGE==='compte')render()}).catch(()=>{});
 fetch('data/hits.json?'+Date.now()).then(r=>r.json()).then(d=>{HITS=d.hits||[];HOT=new Set(HITS.filter(h=>(gain(h)||0)>0).sort((a,b)=>gain(b)-gain(a)).slice(0,3).map(h=>h.id));$('#maj').textContent='Mise à jour le '+(d.maj||'');render()})
   .catch(()=>{$('#list').innerHTML='<div class="empty">Impossible de charger la banque. Recharge la page.</div>'});
