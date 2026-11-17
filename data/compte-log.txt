@@ -1,3 +1,2 @@
-profil: {'abonnes': 712, 'jaime': 11156, 'videos': 37}
-7692390906292423968: erreur IncompleteRead
-vidéos relues: 34/35
+profil: {'abonnes': 712, 'jaime': 11158, 'videos': 37}
+vidéos relues: 35/35
