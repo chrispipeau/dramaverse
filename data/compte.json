@@ -30,6 +30,13 @@
 "videos": 37,
 "date": "17/11/2026",
 "source": "robot"
+},
+{
+"abonnes": 712,
+"jaime": 11168,
+"videos": 37,
+"date": "18/11/2026",
+"source": "robot"
 }
 ]
 }
@@ -37,7 +44,7 @@
 "videos": [
 {
 "titre": "Partie 2 | Elle est sortie défendre sa mère… seule contre toute la bande 😳 Elle …",
-"vues": 2357,
+"vues": 2361,
 "likes": 68,
 "comms": 2,
 "date": "14 nov.",
@@ -48,7 +55,7 @@
 },
 {
 "titre": "Partie 1 : Elle la déteste à la maison… mais touche à sa sœur et t'es mort 😳",
-"vues": 1612,
+"vues": 1613,
 "likes": 39,
 "comms": 1,
 "date": "13 nov.",
@@ -103,7 +110,7 @@
 },
 {
 "titre": "Il a caché son vrai visage pour leur argent 😳 Vous auriez fait quoi à la place d…",
-"vues": 1338,
+"vues": 1339,
 "likes": 45,
 "comms": 2,
 "date": "2 nov.",
@@ -136,7 +143,7 @@
 },
 {
 "titre": "Sa meilleure amie a acheté SA robe de mariée… et l'a portée à son mariage 👇",
-"vues": 2075,
+"vues": 2076,
 "likes": 52,
 "comms": 0,
 "date": "30 oct.",
@@ -213,7 +220,7 @@
 },
 {
 "titre": "Il l'a défendue… elle en a profité 😳 Clémentine est allée trop loin ? 👇",
-"vues": 9170,
+"vues": 9171,
 "likes": 301,
 "comms": 6,
 "date": "22 oct.",
@@ -236,7 +243,7 @@
 {
 "titre": "Il s'est dénoncé tout seul… Coupable ou pas ? 👇",
 "vues": 11100,
-"likes": 174,
+"likes": 175,
 "comms": 0,
 "date": "20 oct.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7698778397073345825",
@@ -421,5 +428,5 @@
 "ts": 1790954277
 }
 ],
-"maj": "17/11/2026 à 23:57"
+"maj": "18/11/2026 à 00:52"
 }
