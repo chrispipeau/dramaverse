@@ -1,19 +1,19 @@
 {
-"maj": "17/11/2026",
+"maj": "18/11/2026",
 "hits": [
 {
 "id": "juicy-glacier-secret",
 "titre": "Le glacier qui avait un secret",
-"vues": 2.1,
+"vues": 2.3,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 4,
 "compte": "@juicydrama07",
 "date": "05/10/2026",
 "duree": 99,
-"likes": 144800,
-"comms": 891,
-"partages": 1028,
+"likes": 157700,
+"comms": 951,
+"partages": 1085,
 "resume": "Un glacier cache un secret, d'après la légende (épisode 6 d'une série). Je n'ai pas vu la vidéo.",
 "note": "Épisode 6 d'une série.",
 "lien": "https://www.tiktok.com/@juicydrama07/video/7693160499076255008",
@@ -35,6 +35,10 @@
 [
 "2026-11-17",
 2100000
+],
+[
+"2026-11-18",
+2300000
 ]
 ]
 },
@@ -47,9 +51,9 @@
 "fruits": 4,
 "compte": "@juicydrama07",
 "date": "16/10/2026",
-"likes": 251100,
-"comms": 4075,
-"partages": 2255,
+"likes": 251400,
+"comms": 4076,
+"partages": 2265,
 "resume": "Premier épisode de la même histoire, d'après la légende. Je n'ai pas vu la vidéo.",
 "note": "Série ; durée non lue.",
 "lien": "https://www.tiktok.com/@juicydrama07/video/7697236409513430305",
@@ -71,6 +75,10 @@
 [
 "2026-11-17",
 2100000
+],
+[
+"2026-11-18",
+2100000
 ]
 ]
 },
@@ -84,9 +92,9 @@
 "compte": "@juicydrama07",
 "date": "21/10/2026",
 "duree": 276,
-"likes": 319800,
-"comms": 5003,
-"partages": 3562,
+"likes": 320900,
+"comms": 5030,
+"partages": 3580,
 "resume": "Histoire de fruits française autour du père de la patronne, d'après la légende. Je n'ai pas vu la vidéo.",
 "note": "Série (épisode 1 aussi dans la banque) ; version longue 4 min 36 : on garde tout, en suites si ça marche.",
 "lien": "https://www.tiktok.com/@juicydrama07/video/7699038952908541216",
@@ -107,6 +115,10 @@
 ],
 [
 "2026-11-17",
+2500000
+],
+[
+"2026-11-18",
 2500000
 ]
 ]
@@ -144,6 +156,10 @@
 [
 "2026-11-17",
 4800000
+],
+[
+"2026-11-18",
+4800000
 ]
 ]
 },
@@ -180,6 +196,10 @@
 [
 "2026-11-17",
 3400000
+],
+[
+"2026-11-18",
+3400000
 ]
 ]
 },
@@ -193,9 +213,9 @@
 "compte": "@quandlesalimentsparlent",
 "date": "07/09/2026",
 "duree": 64,
-"likes": 312800,
-"comms": 2732,
-"partages": 2626,
+"likes": 313200,
+"comms": 2742,
+"partages": 2633,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. À regarder.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7682522786648132897",
 "statut": "À regarder",
@@ -216,22 +236,26 @@
 [
 "2026-11-17",
 3900000
+],
+[
+"2026-11-18",
+3900000
 ]
 ]
 },
 {
 "id": "qlap-hit-1809",
 "titre": "Hit sans légende (18 sept.)",
-"vues": 2.9,
+"vues": 3.0,
 "niche": "Fruits",
 "humeur": "À définir",
 "fruits": 3,
 "compte": "@quandlesalimentsparlent",
 "date": "18/09/2026",
 "duree": 66,
-"likes": 163300,
-"comms": 449,
-"partages": 1755,
+"likes": 165100,
+"comms": 451,
+"partages": 1783,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. À regarder.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7686606579495456033",
 "statut": "À regarder",
@@ -252,6 +276,10 @@
 [
 "2026-11-17",
 2900000
+],
+[
+"2026-11-18",
+3000000
 ]
 ]
 },
@@ -265,9 +293,9 @@
 "compte": "@quandlesalimentsparlent",
 "date": "26/09/2026",
 "duree": 75,
-"likes": 245000,
-"comms": 3357,
-"partages": 2303,
+"likes": 245500,
+"comms": 3372,
+"partages": 2309,
 "resume": "La vidéo n'a que des hashtags en légende : je ne connais pas l'histoire. Beaucoup de commentaires (3 279) : elle fait débattre.",
 "lien": "https://www.tiktok.com/@quandlesalimentsparlent/video/7689905398433729825",
 "statut": "À regarder",
@@ -287,6 +315,10 @@
 ],
 [
 "2026-11-17",
+2400000
+],
+[
+"2026-11-18",
 2400000
 ]
 ]
@@ -325,6 +357,10 @@
 [
 "2026-11-17",
 5100000
+],
+[
+"2026-11-18",
+5100000
 ]
 ]
 },
@@ -362,6 +398,10 @@
 [
 "2026-11-17",
 2200000
+],
+[
+"2026-11-18",
+2200000
 ]
 ]
 },
@@ -392,10 +432,14 @@
 [
 "2026-11-17",
 81100000
+],
+[
+"2026-11-18",
+81100000
 ]
 ],
 "comms": 14800,
-"partages": 346600,
+"partages": 346700,
 "img": "thumbs/mommyyame1-p1.jpg"
 },
 {
@@ -424,22 +468,26 @@
 [
 "2026-11-17",
 80700000
+],
+[
+"2026-11-18",
+80700000
 ]
 ],
-"comms": 7827,
-"partages": 58100,
+"comms": 7829,
+"partages": 58200,
 "img": "thumbs/kurzdrama-fruitstory.jpg"
 },
 {
 "id": "rondrigon-novela",
 "titre": "Novela de frutas (@rondrigon)",
-"vues": 24.8,
+"vues": 25.0,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
 "compte": "@rondrigon",
 "date": "18/05/2026",
-"likes": 85100,
+"likes": 85800,
 "resume": "Série-novela de fruits IA, parties 1 à 4 et final réunies. D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@rondrigon/video/7641021429638630677",
 "statut": "À regarder",
@@ -457,22 +505,26 @@
 [
 "2026-11-17",
 24800000
+],
+[
+"2026-11-18",
+25000000
 ]
 ],
-"comms": 1825,
-"partages": 1299,
+"comms": 1835,
+"partages": 1306,
 "img": "thumbs/rondrigon-novela.jpg"
 },
 {
 "id": "happygap24-drama",
 "titre": "Drame de fruits (@happygap24)",
-"vues": 24.6,
+"vues": 25.8,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
 "compte": "@happygap24",
 "date": "12/11/2026",
-"likes": 1500000,
+"likes": 1600000,
 "resume": "Drame de fruits IA tout récent (#frutas, #drama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@happygap24/video/7707098993968418078",
 "statut": "À regarder",
@@ -490,10 +542,14 @@
 [
 "2026-11-17",
 24600000
+],
+[
+"2026-11-18",
+25800000
 ]
 ],
-"comms": 3433,
-"partages": 40400,
+"comms": 3626,
+"partages": 42600,
 "img": "thumbs/happygap24-drama.jpg"
 },
 {
@@ -505,7 +561,7 @@
 "fruits": 5,
 "compte": "@fruitydrama113",
 "date": "03/10/2026",
-"likes": 759600,
+"likes": 759900,
 "resume": "Histoire triste de fruits IA (#sadstory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruitydrama113/video/7692517256760233238",
 "statut": "À regarder",
@@ -522,16 +578,20 @@
 [
 "2026-11-17",
 17000000
+],
+[
+"2026-11-18",
+17000000
 ]
 ],
-"comms": 2159,
+"comms": 2160,
 "partages": 53300,
 "img": "thumbs/fruitydrama113-magic.jpg"
 },
 {
 "id": "frutasia-trem",
 "titre": "Quel train étrange ! (@frutasiaoficial)",
-"vues": 16.7,
+"vues": 16.9,
 "niche": "Fruits",
 "humeur": "Comédie absurde",
 "fruits": 5,
@@ -554,10 +614,14 @@
 [
 "2026-11-17",
 16700000
+],
+[
+"2026-11-18",
+16900000
 ]
 ],
-"comms": 9405,
-"partages": 128200,
+"comms": 9506,
+"partages": 129100,
 "img": "thumbs/frutasia-trem.jpg"
 },
 {
@@ -569,7 +633,7 @@
 "fruits": 5,
 "compte": "@sr_reflexionesburroides",
 "date": "11/04/2026",
-"likes": 577400,
+"likes": 577600,
 "resume": "Histoire de fruits IA animée (#fruitstory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@sr_reflexionesburroides/video/7627525803844128022",
 "statut": "À regarder",
@@ -586,22 +650,26 @@
 [
 "2026-11-17",
 14400000
+],
+[
+"2026-11-18",
+14400000
 ]
 ],
-"comms": 2669,
+"comms": 2672,
 "partages": 83400,
 "img": "thumbs/reflexiones-fruitstory.jpg"
 },
 {
 "id": "lencecool-famille",
 "titre": "Drame de famille en fruits (@lencecool)",
-"vues": 15.6,
+"vues": 16.1,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
 "compte": "@lencecool",
 "date": "11/11/2026",
-"likes": 785800,
+"likes": 813100,
 "resume": "Drame familial de fruits IA (#dramadefrutas, #familydrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@lencecool/video/7706731223980330254",
 "statut": "À regarder",
@@ -619,10 +687,14 @@
 [
 "2026-11-17",
 15600000
+],
+[
+"2026-11-18",
+16100000
 ]
 ],
-"comms": 2660,
-"partages": 25900,
+"comms": 2778,
+"partages": 26700,
 "img": "thumbs/lencecool-famille.jpg"
 },
 {
@@ -650,6 +722,10 @@
 ],
 [
 "2026-11-17",
+12300000
+],
+[
+"2026-11-18",
 12300000
 ]
 ],
@@ -683,9 +759,13 @@
 [
 "2026-11-17",
 27100000
+],
+[
+"2026-11-18",
+27100000
 ]
 ],
-"comms": 5550,
+"comms": 5549,
 "partages": 42700,
 "img": "thumbs/diarioaurora-novela.jpg"
 },
@@ -715,16 +795,20 @@
 [
 "2026-11-17",
 19900000
+],
+[
+"2026-11-18",
+19900000
 ]
 ],
-"comms": 4605,
+"comms": 4604,
 "partages": 13500,
 "img": "thumbs/bananito-bouchers.jpg"
 },
 {
 "id": "usaifruit-novel",
 "titre": "Fruit novel (@usaifruit)",
-"vues": 15.3,
+"vues": 15.4,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
@@ -747,10 +831,14 @@
 [
 "2026-11-17",
 15300000
+],
+[
+"2026-11-18",
+15400000
 ]
 ],
-"comms": 6116,
-"partages": 24600,
+"comms": 6151,
+"partages": 24700,
 "img": "thumbs/usaifruit-novel.jpg"
 },
 {
@@ -780,9 +868,13 @@
 [
 "2026-11-17",
 13400000
+],
+[
+"2026-11-18",
+13400000
 ]
 ],
-"comms": 5177,
+"comms": 5179,
 "partages": 187700,
 "img": "thumbs/laranjudo-fraise-p1.jpg"
 },
@@ -813,6 +905,10 @@
 [
 "2026-11-17",
 12700000
+],
+[
+"2026-11-18",
+12700000
 ]
 ],
 "comms": 1375,
@@ -822,13 +918,13 @@
 {
 "id": "wagner-iastory",
 "titre": "Histoire IA de fruits (@wagner.beckerhe5)",
-"vues": 13.7,
+"vues": 14.3,
 "niche": "Fruits",
 "humeur": "À définir",
 "fruits": 5,
 "compte": "@wagner.beckerhe5",
 "date": "10/11/2026",
-"likes": 865800,
+"likes": 915000,
 "resume": "Histoire de fruits IA récente (#iastory). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@wagner.beckerhe5/video/7706356543222025504",
 "statut": "À regarder",
@@ -846,10 +942,14 @@
 [
 "2026-11-17",
 13700000
+],
+[
+"2026-11-18",
+14300000
 ]
 ],
-"comms": 1613,
-"partages": 26100,
+"comms": 1696,
+"partages": 27500,
 "img": "thumbs/wagner-iastory.jpg"
 },
 {
@@ -879,10 +979,14 @@
 [
 "2026-11-17",
 11300000
+],
+[
+"2026-11-18",
+11300000
 ]
 ],
-"comms": 6861,
-"partages": 109500,
+"comms": 6876,
+"partages": 109600,
 "img": "thumbs/frutita-secrets-p1.jpg"
 },
 {
@@ -911,6 +1015,10 @@
 [
 "2026-11-17",
 12500000
+],
+[
+"2026-11-18",
+12500000
 ]
 ],
 "comms": 1068,
@@ -920,13 +1028,13 @@
 {
 "id": "fruitfiles-deuxieme-famille",
 "titre": "La deuxième famille secrète (@.the.fruit.files)",
-"vues": 11.3,
+"vues": 11.4,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
 "compte": "@.the.fruit.files",
 "date": "26/09/2026",
-"likes": 618800,
+"likes": 624300,
 "resume": "Son fils montre la fenêtre et crie « Maman ! »… elle découvre la deuxième famille secrète de son mari. D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@.the.fruit.files/video/7688421477015768333",
 "statut": "À regarder",
@@ -943,10 +1051,14 @@
 [
 "2026-11-17",
 11300000
+],
+[
+"2026-11-18",
+11400000
 ]
 ],
-"comms": 3955,
-"partages": 13400,
+"comms": 3986,
+"partages": 13500,
 "img": "thumbs/fruitfiles-deuxieme-famille.jpg"
 },
 {
@@ -958,7 +1070,7 @@
 "fruits": 5,
 "compte": "@fruit_tuts",
 "date": "07/09/2026",
-"likes": 992300,
+"likes": 992900,
 "resume": "Comédie brésilienne : Boquenilce rencontre la famille de Lenivaldo, qui va-t-elle plaire ? D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruit_tuts/video/7682908330607512853",
 "statut": "À regarder",
@@ -975,10 +1087,14 @@
 [
 "2026-11-17",
 10300000
+],
+[
+"2026-11-18",
+10300000
 ]
 ],
-"comms": 6373,
-"partages": 100500,
+"comms": 6377,
+"partages": 100700,
 "img": "thumbs/fruittuts-famille.jpg"
 },
 {
@@ -990,7 +1106,7 @@
 "fruits": 5,
 "compte": "@kerotiffec",
 "date": "18/10/2026",
-"likes": 663800,
+"likes": 664600,
 "resume": "Histoire de fruits IA (#aifruit). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@kerotiffec/video/7697656298795486478",
 "statut": "À regarder",
@@ -1007,6 +1123,10 @@
 [
 "2026-11-17",
 9900000
+],
+[
+"2026-11-18",
+9900000
 ]
 ],
 "comms": 3112,
@@ -1016,13 +1136,13 @@
 {
 "id": "fruitstory692-drama",
 "titre": "Fruit drama (@fruitstory692)",
-"vues": 9.8,
+"vues": 9.9,
 "niche": "Fruits",
 "humeur": "Drame",
 "fruits": 5,
 "compte": "@fruitstory692",
 "date": "08/11/2026",
-"likes": 781200,
+"likes": 782400,
 "resume": "Drame de fruits IA récent (#fruitdrama). D'après la légende ; je n'ai pas encore vu la vidéo.",
 "lien": "https://www.tiktok.com/@fruitstory692/video/7705790443505732894",
 "statut": "À regarder",
@@ -1040,9 +1160,13 @@
 [
 "2026-11-17",
 9800000
+],
+[
+"2026-11-18",
+9900000
 ]
 ],
-"comms": 2180,
+"comms": 2189,
 "partages": 17900,
 "img": "thumbs/fruitstory692-drama.jpg"
 },
@@ -1072,6 +1196,10 @@
 ],
 [
 "2026-11-17",
+9300000
+],
+[
+"2026-11-18",
 9300000
 ]
 ],
@@ -1106,6 +1234,10 @@
 [
 "2026-11-17",
 8800000
+],
+[
+"2026-11-18",
+8800000
 ]
 ],
 "comms": 11500,
@@ -1139,10 +1271,14 @@
 [
 "2026-11-17",
 8800000
+],
+[
+"2026-11-18",
+8800000
 ]
 ],
-"comms": 102600,
-"partages": 56600,
+"comms": 102700,
+"partages": 56700,
 "img": "thumbs/storyanim-apple-rain-p1.jpg"
 },
 {
@@ -1171,6 +1307,10 @@
 ],
 [
 "2026-11-17",
+8200000
+],
+[
+"2026-11-18",
 8200000
 ]
 ],
@@ -1205,6 +1345,10 @@
 [
 "2026-11-17",
 7900000
+],
+[
+"2026-11-18",
+7900000
 ]
 ],
 "comms": 792,
@@ -1237,6 +1381,10 @@
 ],
 [
 "2026-11-17",
+7900000
+],
+[
+"2026-11-18",
 7900000
 ]
 ],
