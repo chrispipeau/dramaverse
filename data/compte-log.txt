@@ -1,2 +1,2 @@
-profil: {'abonnes': 714, 'jaime': 11268, 'videos': 38}
+profil: {'abonnes': 714, 'jaime': 11267, 'videos': 38}
 vidéos relues: 35/35
