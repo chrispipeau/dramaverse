@@ -51,6 +51,13 @@
 "videos": 40,
 "date": "20/11/2026",
 "source": "robot"
+},
+{
+"abonnes": 780,
+"jaime": 11476,
+"videos": 40,
+"date": "21/11/2026",
+"source": "robot"
 }
 ]
 }
@@ -58,7 +65,7 @@
 "videos": [
 {
 "titre": "Partie 2 | Elle est sortie défendre sa mère… seule contre toute la bande 😳 Elle …",
-"vues": 2479,
+"vues": 2480,
 "likes": 70,
 "comms": 2,
 "date": "14 nov.",
@@ -69,7 +76,7 @@
 },
 {
 "titre": "Partie 1 : Elle la déteste à la maison… mais touche à sa sœur et t'es mort 😳",
-"vues": 1643,
+"vues": 1644,
 "likes": 40,
 "comms": 1,
 "date": "13 nov.",
@@ -91,7 +98,7 @@
 },
 {
 "titre": "Elle a volé la jeunesse de sa fille… puis son mari. Le pire, c'est la mère ou le…",
-"vues": 2336,
+"vues": 2337,
 "likes": 63,
 "comms": 1,
 "date": "5 nov.",
@@ -114,7 +121,7 @@
 {
 "titre": "Partie 1 | Personne ne la regardait… alors elle a disparu. Qui est le plus coupa…",
 "vues": 42200,
-"likes": 1265,
+"likes": 1266,
 "comms": 15,
 "date": "3 nov.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7703984975384677665",
@@ -322,7 +329,7 @@
 },
 {
 "titre": "Sécher l'anniv de belle-maman pour le mariage de son pote… Team Coco ou Team Myr…",
-"vues": 35500,
+"vues": 35600,
 "likes": 969,
 "comms": 7,
 "date": "14 oct.",
@@ -390,7 +397,7 @@
 "titre": "Partie 5 · Le bracelet l'a trahie 😳 La vidéo tourne, la Banane balance tout… et …",
 "vues": 721,
 "likes": 52,
-"comms": 0,
+"comms": 1,
 "date": "9 oct.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7694604567543090464",
 "id": "7694604567543090464",
@@ -421,7 +428,7 @@
 },
 {
 "titre": "Il l’a humiliée. Maintenant, elle est sa patronne 🍓 Mais une enveloppe mystérieu…",
-"vues": 7208,
+"vues": 7209,
 "likes": 129,
 "comms": 0,
 "date": "3 oct.",
@@ -442,5 +449,5 @@
 "ts": 1790954277
 }
 ],
-"maj": "20/11/2026 à 23:49"
+"maj": "21/11/2026 à 00:50"
 }
