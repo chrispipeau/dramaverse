@@ -58,6 +58,13 @@
 "videos": 41,
 "date": "21/11/2026",
 "source": "robot"
+},
+{
+"abonnes": 791,
+"jaime": 11708,
+"videos": 41,
+"date": "22/11/2026",
+"source": "robot"
 }
 ]
 }
@@ -65,7 +72,7 @@
 "videos": [
 {
 "titre": "Partie 2 | Elle est sortie défendre sa mère… seule contre toute la bande 😳 Elle …",
-"vues": 2519,
+"vues": 2520,
 "likes": 70,
 "comms": 2,
 "date": "14 nov.",
@@ -164,7 +171,7 @@
 },
 {
 "titre": "Sa meilleure amie a acheté SA robe de mariée… et l'a portée à son mariage 👇",
-"vues": 2220,
+"vues": 2221,
 "likes": 58,
 "comms": 0,
 "date": "30 oct.",
@@ -208,7 +215,7 @@
 },
 {
 "titre": "Elle a fait passer une peluche pour son bébé… et elle l'a payé cher. Bien fait p…",
-"vues": 3081,
+"vues": 3084,
 "likes": 89,
 "comms": 1,
 "date": "26 oct.",
@@ -231,7 +238,7 @@
 {
 "titre": "Elle a choisi le prénom de SON bébé à sa place. Vous auriez fait quoi ? 👇",
 "vues": 126300,
-"likes": 4140,
+"likes": 4142,
 "comms": 17,
 "date": "24 oct.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7700194689776962848",
@@ -241,7 +248,7 @@
 },
 {
 "titre": "Il l'a défendue… elle en a profité 😳 Clémentine est allée trop loin ? 👇",
-"vues": 9256,
+"vues": 9257,
 "likes": 303,
 "comms": 6,
 "date": "22 oct.",
@@ -397,7 +404,7 @@
 "titre": "Partie 5 · Le bracelet l'a trahie 😳 La vidéo tourne, la Banane balance tout… et …",
 "vues": 721,
 "likes": 52,
-"comms": 0,
+"comms": 1,
 "date": "9 oct.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7694604567543090464",
 "id": "7694604567543090464",
@@ -449,5 +456,5 @@
 "ts": 1790954277
 }
 ],
-"maj": "21/11/2026 à 23:44"
+"maj": "22/11/2026 à 00:42"
 }
