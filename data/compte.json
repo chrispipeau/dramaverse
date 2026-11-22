@@ -62,7 +62,8 @@
 {
 "abonnes": 795,
 "jaime": 11774,
-"videos": 41,
+"videos": 35,
+"estime": true,
 "date": "22/11/2026",
 "source": "robot"
 }
@@ -128,7 +129,7 @@
 {
 "titre": "Partie 1 | Personne ne la regardait… alors elle a disparu. Qui est le plus coupa…",
 "vues": 42500,
-"likes": 1271,
+"likes": 1273,
 "comms": 15,
 "date": "3 nov.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7703984975384677665",
@@ -182,7 +183,7 @@
 },
 {
 "titre": "Elle souffle les bougies de sa nièce pour annoncer son mariage 💍 Nectarine a bie…",
-"vues": 4768,
+"vues": 4770,
 "likes": 126,
 "comms": 1,
 "date": "29 oct.",
@@ -456,5 +457,5 @@
 "ts": 1790954277
 }
 ],
-"maj": "22/11/2026 à 15:52"
+"maj": "22/11/2026 à 16:47"
 }
