@@ -1,2 +1,3 @@
-profil: {'abonnes': 923, 'jaime': 13630, 'videos': 44}
-vidéos relues: 35/35
+profil: {'abonnes': 924, 'jaime': 13647, 'videos': 44}
+7708033025677724961: erreur URLError
+vidéos relues: 34/35
