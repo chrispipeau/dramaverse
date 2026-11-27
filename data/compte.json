@@ -100,6 +100,13 @@
 "videos": 45,
 "date": "27/11/2026",
 "source": "robot"
+},
+{
+"abonnes": 984,
+"jaime": 14515,
+"videos": 45,
+"date": "28/11/2026",
+"source": "robot"
 }
 ]
 }
@@ -130,7 +137,7 @@
 {
 "titre": "Partie 2 | Elle a enfin cherché sa fille… mais c'était trop tard. Qui est le plu…",
 "vues": 20300,
-"likes": 929,
+"likes": 931,
 "comms": 11,
 "date": "7 nov.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7705475206659247392",
@@ -162,8 +169,8 @@
 },
 {
 "titre": "Partie 1 | Personne ne la regardait… alors elle a disparu. Qui est le plus coupa…",
-"vues": 55000,
-"likes": 1758,
+"vues": 55100,
+"likes": 1763,
 "comms": 22,
 "date": "3 nov.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7703984975384677665",
@@ -305,7 +312,7 @@
 },
 {
 "titre": "Il s'est dénoncé tout seul… Coupable ou pas ? 👇",
-"vues": 13600,
+"vues": 13700,
 "likes": 190,
 "comms": 1,
 "date": "20 oct.",
@@ -491,5 +498,5 @@
 "ts": 1790954277
 }
 ],
-"maj": "27/11/2026 à 23:59"
+"maj": "28/11/2026 à 00:55"
 }
