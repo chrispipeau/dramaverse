@@ -93,6 +93,13 @@
 "videos": 45,
 "date": "26/11/2026",
 "source": "robot"
+},
+{
+"abonnes": 980,
+"jaime": 14332,
+"videos": 45,
+"date": "27/11/2026",
+"source": "robot"
 }
 ]
 }
@@ -100,7 +107,7 @@
 "videos": [
 {
 "titre": "Partie 2 | Elle est sortie défendre sa mère… seule contre toute la bande 😳 Elle …",
-"vues": 3275,
+"vues": 3280,
 "likes": 76,
 "comms": 2,
 "date": "14 nov.",
@@ -111,7 +118,7 @@
 },
 {
 "titre": "Partie 1 : Elle la déteste à la maison… mais touche à sa sœur et t'es mort 😳",
-"vues": 2564,
+"vues": 2569,
 "likes": 43,
 "comms": 1,
 "date": "13 nov.",
@@ -133,7 +140,7 @@
 },
 {
 "titre": "Elle a volé la jeunesse de sa fille… puis son mari. Le pire, c'est la mère ou le…",
-"vues": 2811,
+"vues": 2814,
 "likes": 64,
 "comms": 1,
 "date": "5 nov.",
@@ -144,7 +151,7 @@
 },
 {
 "titre": "Ils ont tous couru après le dernier chargeur du monde… 😳 Vous auriez fait quoi à…",
-"vues": 2171,
+"vues": 2172,
 "likes": 38,
 "comms": 0,
 "date": "4 nov.",
@@ -166,7 +173,7 @@
 },
 {
 "titre": "Il a caché son vrai visage pour leur argent 😳 Vous auriez fait quoi à la place d…",
-"vues": 1538,
+"vues": 1540,
 "likes": 46,
 "comms": 2,
 "date": "2 nov.",
@@ -177,7 +184,7 @@
 },
 {
 "titre": "Elle a piqué le mari de sa fille… et sa fille était dans la salle. Quel conseil …",
-"vues": 1356,
+"vues": 1357,
 "likes": 32,
 "comms": 1,
 "date": "1 nov.",
@@ -199,7 +206,7 @@
 },
 {
 "titre": "Sa meilleure amie a acheté SA robe de mariée… et l'a portée à son mariage 👇",
-"vues": 2556,
+"vues": 2558,
 "likes": 66,
 "comms": 0,
 "date": "30 oct.",
@@ -210,7 +217,7 @@
 },
 {
 "titre": "Elle souffle les bougies de sa nièce pour annoncer son mariage 💍 Nectarine a bie…",
-"vues": 5097,
+"vues": 5099,
 "likes": 126,
 "comms": 1,
 "date": "29 oct.",
@@ -221,7 +228,7 @@
 },
 {
 "titre": "Il pensait que la fourrière ne viendrait jamais 🚨 Poire a bien fait de l'appeler…",
-"vues": 2868,
+"vues": 2872,
 "likes": 39,
 "comms": 3,
 "date": "28 oct.",
@@ -243,7 +250,7 @@
 },
 {
 "titre": "Elle a fait passer une peluche pour son bébé… et elle l'a payé cher. Bien fait p…",
-"vues": 3294,
+"vues": 3295,
 "likes": 89,
 "comms": 1,
 "date": "26 oct.",
@@ -265,8 +272,8 @@
 },
 {
 "titre": "Elle a choisi le prénom de SON bébé à sa place. Vous auriez fait quoi ? 👇",
-"vues": 136600,
-"likes": 4634,
+"vues": 136700,
+"likes": 4636,
 "comms": 22,
 "date": "24 oct.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7700194689776962848",
@@ -276,7 +283,7 @@
 },
 {
 "titre": "Il l'a défendue… elle en a profité 😳 Clémentine est allée trop loin ? 👇",
-"vues": 9423,
+"vues": 9424,
 "likes": 320,
 "comms": 6,
 "date": "22 oct.",
@@ -432,7 +439,7 @@
 "titre": "Partie 5 · Le bracelet l'a trahie 😳 La vidéo tourne, la Banane balance tout… et …",
 "vues": 731,
 "likes": 52,
-"comms": 1,
+"comms": 0,
 "date": "9 oct.",
 "lien": "https://www.tiktok.com/@dramaaverse/video/7694604567543090464",
 "id": "7694604567543090464",
@@ -484,5 +491,5 @@
 "ts": 1790954277
 }
 ],
-"maj": "26/11/2026 à 23:59"
+"maj": "27/11/2026 à 00:58"
 }
